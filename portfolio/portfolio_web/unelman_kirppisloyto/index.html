@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unelman Kirppislöytö | Kirppis & second-hand</title>
+  <meta name="description" content="Portfolio-demo: kirppis/second-hand sivu. Vaalea teema, suodatus ja muistilista (Vanilla JS)." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Siirry sisältöön</a>
+
+  <header class="top" id="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="#etusivu" aria-label="Unelman Kirppislöytö etusivu">
+        <span class="brand__mark" aria-hidden="true">🎯</span>
+        <span class="brand__txt">
+          <strong>Unelman Kirppislöytö</strong>
+          <small>Second-hand • Kirppis • Löytöjen muistilista</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Päävalikko">
+        <a href="#loydöt">Löydöt</a>
+        <a href="#vinkit">Vinkit</a>
+        <a href="#muistilista" class="pill">
+          Muistilista <span id="wishCount" class="count">0</span>
+        </a>
+      </nav>
+
+      <button class="menu" id="menuBtn" aria-label="Avaa valikko" aria-expanded="false">☰</button>
+    </div>
+
+    <div class="mobile" id="mobileNav" aria-hidden="true">
+      <a href="#loydöt">Löydöt</a>
+      <a href="#vinkit">Vinkit</a>
+      <a href="#muistilista">Muistilista</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="etusivu">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="badge">Vaalea teema • Punainen + keltainen aksentti • Vanilla JS</p>
+          <h1>Kirppikseltä se paras löytö — <span class="accent">ilman säätöä.</span></h1>
+          <p class="lead">
+            Portfolio-demo: suodatus, kortit, muistilista ja ankkuriscroll joka ei peity valikon alle.
+            Tyyli on “paperinen & lämmin” (ei tumma).
+          </p>
+          <div class="hero__actions">
+            <a class="btn" href="#loydöt">Selaa löytöjä</a>
+            <a class="btn btn--ghost" href="#muistilista">Avaa muistilista</a>
+          </div>
+
+          <div class="chips" aria-label="Pikakategoriat">
+            <button class="chip active" data-cat="all">Kaikki</button>
+            <button class="chip" data-cat="vaatteet">Vaatteet</button>
+            <button class="chip" data-cat="sisustus">Sisustus</button>
+            <button class="chip" data-cat="elektroniikka">Elektroniikka</button>
+            <button class="chip" data-cat="kirjat">Kirjat</button>
+          </div>
+        </div>
+
+        <aside class="hero__card">
+          <h2>Pikahaku</h2>
+          <p class="muted">Hae esim. “muki”, “takki”, “lamppu”.</p>
+          <div class="search">
+            <input id="search" type="search" placeholder="Hae löytöjä..." />
+          </div>
+          <div class="mini">
+            <div class="mini__row"><span>Budjetti</span><strong>€5–€40</strong></div>
+            <div class="mini__row"><span>Fiilis</span><strong>Löytöjahti</strong></div>
+            <div class="mini__row"><span>Vinkki</span><strong>Tarkista saumat</strong></div>
+          </div>
+          <p class="tiny muted">Huom: tämä on demo, ei oikea palvelu.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="loydöt">
+      <div class="wrap">
+        <div class="head">
+          <h2>Löydöt</h2>
+          <p class="muted">Suodata tai hae — lisää kiinnostavat muistilistaan.</p>
+        </div>
+
+        <div class="grid" id="grid" aria-live="polite"></div>
+
+        <p class="tiny muted" id="gridNote"></p>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="vinkit">
+      <div class="wrap">
+        <div class="head">
+          <h2>Vinkit kirppikselle</h2>
+          <p class="muted">Pieni sisältöosio tekee sivusta aidomman.</p>
+        </div>
+
+        <div class="tips">
+          <article class="tip">
+            <h3>1) Tarkista kunto nopeasti</h3>
+            <p class="muted">Saumat, vetoketjut, napit ja hajut. Säästät aikaa ja hermoja.</p>
+          </article>
+          <article class="tip">
+            <h3>2) Tee “hakusanalista”</h3>
+            <p class="muted">Esim. takki, lamppu, muki, hylly. Löydät helpommin etsimäsi.</p>
+          </article>
+          <article class="tip">
+            <h3>3) Budjetti + 10%</h3>
+            <p class="muted">Jätä pieni pelivara — silloin ei harmita, jos löydät “sen oikean”.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="muistilista">
+      <div class="wrap">
+        <div class="head">
+          <h2>Muistilista</h2>
+          <p class="muted">Demo: tallennus selaimeen (localStorage).</p>
+        </div>
+
+        <div class="wish">
+          <div class="wish__top">
+            <button class="btn btn--ghost" id="clearWish">Tyhjennä</button>
+            <span class="tiny muted" id="wishNote" aria-live="polite"></span>
+          </div>
+          <div id="wishList" class="wish__list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year"></span> Unelman Kirppislöytö • Portfolio-demo</p>
+      <a href="#etusivu">Ylös</a>
+      <a href="#loydöt">Löydöt</a>
+      <a href="#muistilista">Muistilista</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
