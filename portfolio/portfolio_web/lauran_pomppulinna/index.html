@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lauran Pomppulinna | Bileet liikkeelle</title>
+  <meta name="description" content="Portfolio-demo: pomppulinnavuokraus. Neon-tyyli, paketit, saatavuus, FAQ-accordion ja tilauslomake (demo)." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="#">
+        <span class="brand__mark" aria-hidden="true">LP</span>
+        <span class="brand__txt">
+          <strong>Lauran Pomppulinna</strong>
+          <small>Vuokraus • Toimitus • Juhlat</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Päävalikko">
+        <a href="#paketit">Paketit</a>
+        <a href="#saatavuus">Saatavuus</a>
+        <a href="#faq">FAQ</a>
+        <a class="cta" href="#tilaus">Varaa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__left">
+          <p class="chip">Portfolio-demo • Neon confetti • Vanilla JS</p>
+          <h1>Pomppua, väriä ja vauhtia – <span class="accent">juhlat käyntiin</span> minuutissa.</h1>
+          <p class="lead">
+            Tämä on esimerkkisivu pomppulinnavuokraukselle: pakettivalinta, saatavuus-check, FAQ-accordion ja
+            varauslomake (demo). Tarkoituksella eri tyyli kuin muissa portfolio-sivuissa.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn" href="#paketit">Katso paketit</a>
+            <a class="btn btn--ghost" href="#tilaus">Varaa nyt</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat"><strong>30–60 min</strong><span>asennus</span></div>
+            <div class="stat"><strong>1–2 pv</strong><span>toimitus (demo)</span></div>
+            <div class="stat"><strong>4.8/5</strong><span>palaute</span></div>
+          </div>
+        </div>
+
+        <aside class="hero__card" aria-label="Nopea varauskortti">
+          <div class="card__glow" aria-hidden="true"></div>
+          <h2>Nopea varaus</h2>
+          <p class="muted">Valitse paketti ja tarkista päivä – demo näyttää “vapaa/varattu”.</p>
+
+          <label class="field">
+            <span>Paketti</span>
+            <select id="quickPlan">
+              <option value="Mini">Mini</option>
+              <option value="Party">Party</option>
+              <option value="Mega">Mega</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Päivämäärä</span>
+            <input id="quickDate" type="date" />
+          </label>
+
+          <div class="row">
+            <span class="badge" id="availBadge">Valitse päivä</span>
+            <button class="btn btn--small" id="jumpToForm">Varaa</button>
+          </div>
+
+          <p class="tiny">Huom: tämä on portfolio-demo, ei oikea varausjärjestelmä.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="paketit">
+      <div class="wrap">
+        <div class="head">
+          <h2>Paketit</h2>
+          <p class="muted">Klikkaa “Valitse” → paketti täyttyy varauslomakkeeseen. (JS)</p>
+        </div>
+
+        <div class="plans">
+          <article class="plan">
+            <div class="plan__top">
+              <h3>Mini</h3>
+              <span class="price">79€</span>
+            </div>
+            <p class="muted">Pieni pomppulinna sisä-/pihajuhliin.</p>
+            <ul>
+              <li>1 pomppulinna</li>
+              <li>Asennus + nouto</li>
+              <li>2–6-vuotiaille</li>
+            </ul>
+            <button class="btn btn--wide" data-plan="Mini (79€)">Valitse Mini</button>
+          </article>
+
+          <article class="plan plan--featured">
+            <div class="ribbon" aria-hidden="true">Suosituin</div>
+            <div class="plan__top">
+              <h3>Party</h3>
+              <span class="price">119€</span>
+            </div>
+            <p class="muted">Pomppu + liukumäki. Täydellinen synttäreille.</p>
+            <ul>
+              <li>Pomppulinna + liukumäki</li>
+              <li>Asennus + nouto</li>
+              <li>3–10-vuotiaille</li>
+            </ul>
+            <button class="btn btn--wide" data-plan="Party (119€)">Valitse Party</button>
+          </article>
+
+          <article class="plan">
+            <div class="plan__top">
+              <h3>Mega</h3>
+              <span class="price">169€</span>
+            </div>
+            <p class="muted">Iso setti pihajuhliin + lisävarusteita.</p>
+            <ul>
+              <li>Iso pomppulinna</li>
+              <li>Lisävarusteet (demo)</li>
+              <li>5–12-vuotiaille</li>
+            </ul>
+            <button class="btn btn--wide" data-plan="Mega (169€)">Valitse Mega</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="saatavuus">
+      <div class="wrap">
+        <div class="head">
+          <h2>Saatavuus</h2>
+          <p class="muted">Valitse päivämäärä – demo-logiikka näyttää vapaan/varatun.</p>
+        </div>
+
+        <div class="availability">
+          <div class="availability__box">
+            <label class="field">
+              <span>Päivämäärä</span>
+              <input id="availDate" type="date" />
+            </label>
+
+            <label class="field">
+              <span>Paketti</span>
+              <select id="availPlan">
+                <option value="Mini">Mini</option>
+                <option value="Party">Party</option>
+                <option value="Mega">Mega</option>
+              </select>
+            </label>
+
+            <button class="btn" id="checkAvail">Tarkista</button>
+
+            <div class="result" aria-live="polite">
+              <span class="badge" id="availResult">Valitse päivä ja tarkista</span>
+              <p class="tiny muted" id="availHint"></p>
+            </div>
+          </div>
+
+          <div class="availability__note">
+            <h3>Turvallisuus (demo)</h3>
+            <ul>
+              <li>Tarvitsee tasaisen alustan</li>
+              <li>Ei teräviä esineitä alueella</li>
+              <li>Valvonta aikuisen toimesta</li>
+              <li>Säävaraus ulkokäytössä</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="head">
+          <h2>FAQ</h2>
+          <p class="muted">Accordion-tyyppinen FAQ (JS) — nopea ja selkeä.</p>
+        </div>
+
+        <div class="faq" id="faqList">
+          <button class="q" aria-expanded="false">
+            <span>Kuinka paljon tilaa tarvitaan?</span><span class="chev" aria-hidden="true">▾</span>
+          </button>
+          <div class="a">
+            Yleensä 4×4 m (Mini) – 6×6 m (Mega). Tarkat mitat sovitaan paketista. (Demo-teksti)
+          </div>
+
+          <button class="q" aria-expanded="false">
+            <span>Kuinka kauan asennus kestää?</span><span class="chev" aria-hidden="true">▾</span>
+          </button>
+          <div class="a">
+            Tyypillisesti 30–60 min riippuen paikasta ja paketista. (Demo-teksti)
+          </div>
+
+          <button class="q" aria-expanded="false">
+            <span>Mitä jos sataa?</span><span class="chev" aria-hidden="true">▾</span>
+          </button>
+          <div class="a">
+            Ulkovuokrauksissa voidaan siirtää ajankohtaa. Sisätiloissa onnistuu usein säästä riippumatta. (Demo)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="tilaus">
+      <div class="wrap">
+        <div class="head">
+          <h2>Varaa (demo)</h2>
+          <p class="muted">Lomake validoidaan ja näyttää onnistumisviestin. Ei lähetä oikeasti.</p>
+        </div>
+
+        <div class="order">
+          <form class="form" id="orderForm" novalidate>
+            <label class="field">
+              <span>Nimi</span>
+              <input name="name" type="text" required minlength="2" placeholder="Etunimi Sukunimi" />
+              <small class="err" data-err="name"></small>
+            </label>
+
+            <label class="field">
+              <span>Sähköposti</span>
+              <input name="email" type="email" required placeholder="nimi@esimerkki.fi" />
+              <small class="err" data-err="email"></small>
+            </label>
+
+            <label class="field">
+              <span>Valittu paketti</span>
+              <input name="plan" id="planInput" type="text" readonly value="—" />
+              <small class="hint">Valitse paketti yltä tai “Nopea varaus” -kortista.</small>
+            </label>
+
+            <label class="field">
+              <span>Päivämäärä</span>
+              <input name="date" id="dateInput" type="date" required />
+              <small class="err" data-err="date"></small>
+            </label>
+
+            <label class="field">
+              <span>Lisätiedot</span>
+              <textarea name="message" rows="4" required minlength="10" placeholder="Osoite, sisä/ulko, lisätoiveet..."></textarea>
+              <small class="err" data-err="message"></small>
+            </label>
+
+            <button class="btn" type="submit">Lähetä varauspyyntö (demo)</button>
+            <p class="tiny muted" id="formNote" aria-live="polite"></p>
+          </form>
+
+          <aside class="side">
+            <div class="side__box">
+              <h3>Toimitusalue (demo)</h3>
+              <p class="muted">Kaupunki + 25 km. Kauemmas sopimuksen mukaan.</p>
+            </div>
+            <div class="side__box">
+              <h3>Mitä sisältyy</h3>
+              <ul>
+                <li>Asennus + nouto</li>
+                <li>Turvaohjeet</li>
+                <li>Perussiivous</li>
+              </ul>
+            </div>
+            <div class="side__box">
+              <h3>Vinkki</h3>
+              <p class="muted">Valitse ensin paketti → varaus on nopeampi.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year"></span> Lauran Pomppulinna • Portfolio-demo</p>
+      <a href="#paketit">Paketit</a>
+      <a href="#tilaus">Varaa</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
