@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liisan Verkkokauppa | Micro e-commerce demo</title>
+  <meta name="description" content="Portfolio-demo: micro-ecommerce. Tuotegrid, cart drawer, kuponki ja yhteenveto (Vanilla JS)." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Siirry sisältöön</a>
+
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="#">
+        <span class="brand__mark" aria-hidden="true">LV</span>
+        <span class="brand__txt">
+          <strong>Liisan Verkkokauppa</strong>
+          <small>Micro e-commerce • Portfolio-demo</small>
+        </span>
+      </a>
+
+      <div class="top__actions">
+        <button class="iconbtn" id="openCart" aria-label="Avaa ostoskori">
+          <span aria-hidden="true">🛒</span>
+          <span class="cartpill" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="wrap subbar">
+      <div class="search">
+        <input id="search" type="search" placeholder="Hae tuotteita… (esim. 'muki', 't-paita')" />
+      </div>
+
+      <div class="chips" role="group" aria-label="Kategoriat">
+        <button class="chip active" data-cat="all">Kaikki</button>
+        <button class="chip" data-cat="koti">Koti</button>
+        <button class="chip" data-cat="asusteet">Asusteet</button>
+        <button class="chip" data-cat="toimisto">Toimisto</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="badge">Vanilla JS • Cart drawer • Coupon</p>
+          <h1>Pieni kauppa, iso käytettävyys.</h1>
+          <p class="muted">
+            Tämä on micro-ecommerce demo: tuotegrid, ostoskori sivusta (drawer),
+            määränmuutos, välisummaa, alennuskoodi ja yhteenveto.
+          </p>
+          <div class="hero__stats">
+            <div class="stat"><strong>Nopea</strong><span>UI + JS</span></div>
+            <div class="stat"><strong>Selkeä</strong><span>ostoskori</span></div>
+            <div class="stat"><strong>Demo</strong><span>ei maksua</span></div>
+          </div>
+        </div>
+
+        <aside class="hero__card">
+          <h2>Alennuskoodi</h2>
+          <p class="muted">Kokeile koodia <strong>LIISA10</strong> (−10%).</p>
+          <div class="hintbox">
+            <div class="hintrow"><span>Toimitus</span><strong>4.90€</strong></div>
+            <div class="hintrow"><span>Ilmainen toimitus</span><strong>yli 60€</strong></div>
+          </div>
+          <button class="btn" id="scrollProducts">Selaa tuotteita</button>
+          <p class="tiny muted">Huom: demo-kauppa, ei oikeita tuotteita.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="wrap">
+        <div class="head">
+          <h2>Tuotteet</h2>
+          <p class="muted">Lisää koriin ja avaa ostoskori oikeasta yläkulmasta.</p>
+        </div>
+
+        <div class="grid" id="productGrid" aria-live="polite">
+          <!-- Filled by JS -->
+        </div>
+
+        <p class="tiny muted" id="gridNote"></p>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="checkout">
+      <div class="wrap">
+        <div class="head">
+          <h2>Kassa (demo)</h2>
+          <p class="muted">Tämä osio näyttää yhteenvetoa — oikea maksu ei kuulu demoihin.</p>
+        </div>
+
+        <div class="checkout">
+          <div class="panel">
+            <h3>Yhteenveto</h3>
+            <div class="sumrow"><span>Välisummaa</span><strong id="sumSubtotal">0.00€</strong></div>
+            <div class="sumrow"><span>Alennus</span><strong id="sumDiscount">0.00€</strong></div>
+            <div class="sumrow"><span>Toimitus</span><strong id="sumShipping">0.00€</strong></div>
+            <hr />
+            <div class="sumrow total"><span>Yhteensä</span><strong id="sumTotal">0.00€</strong></div>
+
+            <div class="coupon">
+              <label>
+                <span>Kuponkikoodi</span>
+                <input id="couponInput" type="text" placeholder="esim. LIISA10" />
+              </label>
+              <button class="btn btn--small" id="applyCoupon">Käytä</button>
+            </div>
+            <p class="tiny muted" id="couponNote" aria-live="polite"></p>
+
+            <button class="btn btn--wide" id="fakePay">Siirry maksamaan (demo)</button>
+            <p class="tiny muted" id="payNote" aria-live="polite"></p>
+          </div>
+
+          <div class="panel panel--soft">
+            <h3>Toimitus & palautus</h3>
+            <ul class="list">
+              <li>Toimitus 2–4 arkipäivää (demo)</li>
+              <li>Palautus 14 vrk (demo)</li>
+              <li>Ilmainen toimitus yli 60€</li>
+            </ul>
+            <div class="minihelp">
+              <h4>Vinkki</h4>
+              <p class="muted">Lisää koriin 2–3 tuotetta ja testaa määränmuutos + kuponki.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart Drawer -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__backdrop" data-close="true"></div>
+    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="Ostoskori">
+      <header class="drawer__head">
+        <h2>Ostoskori</h2>
+        <button class="iconbtn" data-close="true" aria-label="Sulje">✕</button>
+      </header>
+
+      <div class="drawer__body" id="cartItems">
+        <!-- Filled by JS -->
+      </div>
+
+      <footer class="drawer__foot">
+        <div class="sumrow"><span>Välisummaa</span><strong id="cartSubtotal">0.00€</strong></div>
+        <div class="sumrow"><span>Toimitus</span><strong id="cartShipping">0.00€</strong></div>
+        <div class="sumrow total"><span>Yhteensä</span><strong id="cartTotal">0.00€</strong></div>
+
+        <button class="btn btn--wide" id="toCheckout">Kassalle</button>
+        <button class="btn btn--ghost btn--wide" id="clearCart">Tyhjennä kori</button>
+        <p class="tiny muted">Demo: ei oikeaa maksua.</p>
+      </footer>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year"></span> Liisan Verkkokauppa • Portfolio-demo</p>
+      <a href="#products">Tuotteet</a>
+      <a href="#checkout">Kassa</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
