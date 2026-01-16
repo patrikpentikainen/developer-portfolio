@@ -1,5 +1,5 @@
 // ✅ Muuta tämä:
-const GITHUB_USER = "YOUR_GITHUB_USERNAME";
+const GITHUB_USER = "patrikpentikainen";
 
 // Projektit (muokkaa tarvittaessa kuvauksia/tageja + live-linkkejä)
 // Live-linkit: täytä kun otat Pagesin käyttöön per demo
