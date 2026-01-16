@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heinä-Heikki</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1>Heinä-Heikki</h1>
+        <p class="subtitle">Yksinkertainen harjoitusprojekti</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Welcome to the Home Page</h2>
+        <p>This is the home page of the website.</p>
+
+        <button id="helloBtn" class="btn" type="button">
+          Say hello
+        </button>
+
+        <p id="output" class="output" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <small>© <span id="year"></span> Heinä-Heikki</small>
+      </div>
+    </footer>
+
+    <!-- JavaScript (loppuun, jotta DOM on ladattu) -->
+    <script src="script.js"></script>
+  </body>
+</html>
