@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metalli Mikko | Konepaja & hitsaus</title>
+  <meta name="description" content="Portfolio-demo: konepaja/metalliyrityksen sivu. Palvelut, referenssit, tarjouslaskuri ja tarjouspyyntölomake (Vanilla JS)." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Siirry sisältöön</a>
+
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="#">
+        <span class="brand__mark" aria-hidden="true">MM</span>
+        <span class="brand__txt">
+          <strong>Metalli Mikko</strong>
+          <small>Konepaja • Hitsaus • Asennus</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Päävalikko">
+        <a href="#palvelut">Palvelut</a>
+        <a href="#referenssit">Referenssit</a>
+        <a href="#tarjous">Tarjous</a>
+        <a class="cta" href="#yhteys">Ota yhteyttä</a>
+      </nav>
+
+      <button class="menu" id="menuBtn" aria-label="Avaa valikko" aria-expanded="false">☰</button>
+    </div>
+
+    <div class="mobile" id="mobileNav" aria-hidden="true">
+      <a href="#palvelut">Palvelut</a>
+      <a href="#referenssit">Referenssit</a>
+      <a href="#tarjous">Tarjous</a>
+      <a href="#yhteys">Ota yhteyttä</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__left">
+          <p class="chip">Portfolio-demo • Industrial UI • Vanilla JS</p>
+          <h1>Terästä, tarkkuutta ja aikatauluja.<br><span class="accent">Konepaja Mikon tyyliin.</span></h1>
+          <p class="lead">
+            Esimerkkisivusto metallialan yrittäjälle: palvelukortit, suodatus, referenssit,
+            sekä nopea “suuntaa-antava” tarjouslaskuri ja tarjouspyyntölomake (demo).
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn" href="#tarjous">Laske suuntaa-antava hinta</a>
+            <a class="btn btn--ghost" href="#palvelut">Katso palvelut</a>
+          </div>
+
+          <div class="kpis">
+            <div class="kpi"><strong>24–72h</strong><span>tarjousvastaukset</span></div>
+            <div class="kpi"><strong>EN 1090</strong><span>valmius (demo)</span></div>
+            <div class="kpi"><strong>+10v</strong><span>kokemus</span></div>
+          </div>
+        </div>
+
+        <aside class="hero__panel">
+          <h2>Nopeasti selville</h2>
+          <p class="muted">Valitse työtyyppi ja näe, mihin kannattaa kiinnittää huomiota.</p>
+
+          <div class="quick">
+            <button class="quick__btn" data-preset="hitsaus">
+              <span class="dot dot--o"></span>
+              <span><strong>Hitsaus</strong><small>MIG/MAG/TIG</small></span>
+            </button>
+            <button class="quick__btn" data-preset="koneistus">
+              <span class="dot dot--b"></span>
+              <span><strong>Koneistus</strong><small>CNC / sorvaus</small></span>
+            </button>
+            <button class="quick__btn" data-preset="asennus">
+              <span class="dot dot--g"></span>
+              <span><strong>Asennus</strong><small>kohde-työt</small></span>
+            </button>
+          </div>
+
+          <div class="callout" id="callout">
+            Valitse yllä työtyyppi — demo näyttää vinkkejä.
+          </div>
+
+          <p class="tiny muted">Huom: tämä on portfolio-demo, ei oikea yrityssivu.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="palvelut">
+      <div class="wrap">
+        <div class="head">
+          <h2>Palvelut</h2>
+          <p class="muted">Suodata palveluita (JS) — eri fiilis kuin muissa demoissa.</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Palvelusuodatin">
+          <button class="f active" data-filter="all">Kaikki</button>
+          <button class="f" data-filter="hitsaus">Hitsaus</button>
+          <button class="f" data-filter="koneistus">Koneistus</button>
+          <button class="f" data-filter="rakenne">Rakenne</button>
+          <button class="f" data-filter="asennus">Asennus</button>
+        </div>
+
+        <div class="cards" id="serviceGrid" aria-live="polite">
+          <!-- JS fills -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="referenssit">
+      <div class="wrap">
+        <div class="head">
+          <h2>Referenssit (demo)</h2>
+          <p class="muted">Kuvien sijasta käytetään “work log” -kortteja, industrial-henkisesti.</p>
+        </div>
+
+        <div class="refs">
+          <article class="ref">
+            <div class="ref__top">
+              <strong>Portaikon kaide</strong>
+              <span class="badge">Rakenne</span>
+            </div>
+            <p class="muted">Mittaus → valmistus → pulverimaalaus → asennus. (Demo)</p>
+            <div class="ref__meta">
+              <span>Materiaali: S235</span>
+              <span>Aika: 2 pv</span>
+              <span>Toleranssi: ±1 mm</span>
+            </div>
+          </article>
+
+          <article class="ref">
+            <div class="ref__top">
+              <strong>Työpöydän runko</strong>
+              <span class="badge">Hitsaus</span>
+            </div>
+            <p class="muted">MIG-hitsaus, oikaisu, viimeistely. (Demo)</p>
+            <div class="ref__meta">
+              <span>Materiaali: putkirunko</span>
+              <span>Aika: 1 pv</span>
+              <span>Pinta: mattamusta</span>
+            </div>
+          </article>
+
+          <article class="ref">
+            <div class="ref__top">
+              <strong>Akselin holkki</strong>
+              <span class="badge">Koneistus</span>
+            </div>
+            <p class="muted">CNC-sorvaus + sovitus olemassa olevaan akseliin. (Demo)</p>
+            <div class="ref__meta">
+              <span>Materiaali: C45</span>
+              <span>Aika: 4 h</span>
+              <span>Sovitus: H7</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tarjous">
+      <div class="wrap">
+        <div class="head">
+          <h2>Suuntaa-antava tarjouslaskuri (demo)</h2>
+          <p class="muted">Valitse työ, lisää arvio — JS laskee hinnan ja selittää mistä se muodostuu.</p>
+        </div>
+
+        <div class="quote">
+          <div class="panel">
+            <h3>Työn tiedot</h3>
+
+            <label class="field">
+              <span>Työtyyppi</span>
+              <select id="qType">
+                <option value="hitsaus">Hitsaus</option>
+                <option value="koneistus">Koneistus</option>
+                <option value="rakenne">Rakenne / valmistus</option>
+                <option value="asennus">Asennus</option>
+              </select>
+            </label>
+
+            <div class="row">
+              <label class="field">
+                <span>Arvioitu tuntimäärä</span>
+                <input id="qHours" type="number" min="1" value="4" />
+              </label>
+
+              <label class="field">
+                <span>Materiaalikustannus (€)</span>
+                <input id="qMaterial" type="number" min="0" value="60" />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Kiireellisyys</span>
+              <select id="qRush">
+                <option value="0">Normaali</option>
+                <option value="0.15">Kiire (+15%)</option>
+                <option value="0.30">Erittäin kiire (+30%)</option>
+              </select>
+            </label>
+
+            <button class="btn btn--wide" id="calc">Laske</button>
+            <p class="tiny muted">Tämä on demo-arvio — oikea tarjous tehdään mittojen ja piirustusten mukaan.</p>
+          </div>
+
+          <aside class="panel panel--soft">
+            <h3>Arvio</h3>
+            <div class="sum">
+              <div class="sumrow"><span>Tuntihinta</span><strong id="sRate">—</strong></div>
+              <div class="sumrow"><span>Työ</span><strong id="sWork">—</strong></div>
+              <div class="sumrow"><span>Materiaalit</span><strong id="sMat">—</strong></div>
+              <div class="sumrow"><span>Kiirekerroin</span><strong id="sRush">—</strong></div>
+              <hr />
+              <div class="sumrow total"><span>Yhteensä</span><strong id="sTotal">—</strong></div>
+            </div>
+
+            <div class="explain" id="explain">
+              Paina “Laske” nähdäksesi erittelyn.
+            </div>
+
+            <a class="btn btn--ghost btn--wide" href="#yhteys">Pyydä oikea tarjous</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="yhteys">
+      <div class="wrap">
+        <div class="head">
+          <h2>Tarjouspyyntö (demo)</h2>
+          <p class="muted">Kevyt validointi, ei lähetä oikeasti. Tarkoitus näyttää form-osaamista.</p>
+        </div>
+
+        <div class="contact">
+          <form class="panel" id="form" novalidate>
+            <label class="field">
+              <span>Nimi / Yritys</span>
+              <input name="name" type="text" required minlength="2" placeholder="Esim. Mikko Metalli Oy" />
+              <small class="err" data-err="name"></small>
+            </label>
+
+            <div class="row">
+              <label class="field">
+                <span>Sähköposti</span>
+                <input name="email" type="email" required placeholder="nimi@yritys.fi" />
+                <small class="err" data-err="email"></small>
+              </label>
+
+              <label class="field">
+                <span>Puhelin</span>
+                <input name="phone" type="tel" required minlength="6" placeholder="+358..." />
+                <small class="err" data-err="phone"></small>
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Työn kuvaus</span>
+              <textarea name="msg" rows="5" required minlength="12" placeholder="Mitat, materiaali, määrä, aikataulu..."></textarea>
+              <small class="err" data-err="msg"></small>
+            </label>
+
+            <button class="btn" type="submit">Lähetä pyyntö (demo)</button>
+            <p class="tiny muted" id="formNote" aria-live="polite"></p>
+          </form>
+
+          <aside class="panel panel--soft">
+            <h3>Toimitus & toimintatapa</h3>
+            <ul class="list">
+              <li>Työt sopimuksen mukaan: pajalla tai kohteessa</li>
+              <li>Piirustukset / mitat nopeuttavat tarjousta</li>
+              <li>Materiaalit: teräs, ruostumaton, alumiini (demo)</li>
+            </ul>
+
+            <div class="mini">
+              <h4>Prosessi</h4>
+              <ol>
+                <li>Tarpeen kartoitus</li>
+                <li>Tarjous + aikataulu</li>
+                <li>Valmistus / asennus</li>
+                <li>Luovutus</li>
+              </ol>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year"></span> Metalli Mikko • Portfolio-demo</p>
+      <a href="#palvelut">Palvelut</a>
+      <a href="#tarjous">Tarjous</a>
+      <a href="#yhteys">Yhteys</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
