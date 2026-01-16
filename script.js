@@ -1,75 +1,77 @@
-// ✅ Muuta tämä:
+// ✅ GitHub user (Pages domain)
 const GITHUB_USER = "patrikpentikainen";
 
-// Projektit (muokkaa tarvittaessa kuvauksia/tageja + live-linkkejä)
-// Live-linkit: täytä kun otat Pagesin käyttöön per demo
+// ✅ Monorepo name (this repository)
+const REPO_NAME = "developer-portfolio";
+
+// Projektit (monorepo): folder = kansion nimi polussa portfolio/portfolio_web/<folder>/
 const projects = [
   {
     name: "Heinä Heikki",
-    repo: "site-heina-heikki",
-    live: "", // esim. https://YOUR_GITHUB_USERNAME.github.io/site-heina-heikki/
+    folder: "heina_heikki",
+    live: "",
     desc: "Kevyt ja selkeä landing page -demo. Fokus typografiassa, layoutissa ja responsiivisuudessa.",
     tags: ["Landing", "HTML", "CSS", "Responsive"]
   },
   {
     name: "Kivi Kalle",
-    repo: "site-kivi-kalle",
+    folder: "kivi_kalle",
     live: "",
     desc: "Visuaalisempi yrityssivun malli. Värit, osiot ja CTA-rakenne korostuvat.",
     tags: ["UI", "Layout", "Branding", "CSS"]
   },
   {
-    name: "Konemiehen paja",
-    repo: "site-konemiehen-paja",
+    name: "Konemiehen & Pojan Vaihtokone",
+    folder: "konemiehen_ja_pojan_vaihtokone",
     live: "",
     desc: "Teollisuushenkinen yrityssivusto. Rakenteinen sisältö ja informatiivinen layout.",
     tags: ["Business", "HTML", "CSS", "Structure"]
   },
   {
     name: "Kukallinen Leena",
-    repo: "site-kukallinen-leena",
+    folder: "kukallinen_leena",
     live: "",
     desc: "Pehmeä ja visuaalinen pienyrittäjäsivusto. Väripaletti ja typografia keskiössä.",
     tags: ["Small business", "Design", "UI", "CSS"]
   },
   {
     name: "Lauran Pomppulinna",
-    repo: "site-lauran-pomppulinna",
+    folder: "lauran_pomppulinna",
     live: "",
     desc: "Leikkisä tapahtuma-/palvelusivu. Asiakaslähtöinen rakenne ja selkeät osiot.",
     tags: ["Marketing", "Landing", "Fun UI", "CSS"]
   },
   {
     name: "Liisan verkkokauppa",
-    repo: "site-liisan-verkkokauppa-demo",
+    folder: "liisan_verkkokauppa",
     live: "",
     desc: "Verkkokaupan etusivumalli: tuotekortit, rakenne ja ostopolun elementit.",
     tags: ["E-commerce", "UI", "Layout", "HTML"]
   },
   {
     name: "Metalli Mikko",
-    repo: "site-metalli-mikko",
+    folder: "metalli_mikko",
     live: "",
     desc: "Raskaan alan yrityssivun demo. Selkeä informaatio ja ammattimainen ulkoasu.",
     tags: ["Industrial", "Corporate", "HTML", "CSS"]
   },
   {
     name: "Unelman kirppislöytö",
-    repo: "site-unelman-kirppislöyto",
+    folder: "unelman_kirppisloyto",
     live: "",
     desc: "Harraste- ja yhteisöpohjainen sivu. Korttipohjainen sisältörakenne.",
     tags: ["Community", "Cards", "UI", "CSS"]
   },
   {
     name: "Veikon polttopuut",
-    repo: "site-veikon-polttopuut",
+    folder: "veikon_polttopuut",
     live: "",
     desc: "Paikallisen palvelun myyntisivu. Nopea, selkeä ja responsiivinen rakenne.",
     tags: ["Local business", "Landing", "HTML", "Responsive"]
   },
   {
     name: "Vesan venekeskus",
-    repo: "site-vesan-venekeskus",
+    folder: "vesan_venekeskus",
     live: "",
     desc: "Harraste- ja palvelusivun yhdistelmä. Kategoriat ja navigaatiorakenne.",
     tags: ["Hobby", "Business", "UI", "HTML"]
@@ -107,12 +109,18 @@ function chip(label){
 filtersEl.appendChild(chip("All"));
 allTags.forEach(t => filtersEl.appendChild(chip(t)));
 
-function repoUrl(repo){
-  return `https://github.com/${GITHUB_USER}/${repo}`;
+// Repo link (monorepo): open the folder in GitHub
+function repoUrl(folder){
+  // Link directly to the folder in the GitHub repository
+  return `https://github.com/${GITHUB_USER}/${REPO_NAME}/tree/main/portfolio/portfolio_web/${folder}`;
 }
+
+// Live link (GitHub Pages, monorepo): open the folder path
 function liveUrl(p){
-  // Jos p.live on tyhjä, ehdotetaan oletus-URL:ia
-  return p.live && p.live.trim() ? p.live.trim() : `https://${GITHUB_USER}.github.io/${p.repo}/`;
+  // If a custom live URL is provided, use it. Otherwise, build a monorepo Pages path.
+  return p.live && p.live.trim()
+    ? p.live.trim()
+    : `https://${GITHUB_USER}.github.io/${REPO_NAME}/portfolio/portfolio_web/${p.folder}/`;
 }
 
 function matches(p, q){
@@ -172,7 +180,7 @@ function makeCard(p){
 
   const ghA = document.createElement("a");
   ghA.className = "linkbtn ghost";
-  ghA.href = repoUrl(p.repo);
+  ghA.href = repoUrl(p.folder);
   ghA.target = "_blank";
   ghA.rel = "noreferrer";
   ghA.textContent = "GitHub";
