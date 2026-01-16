@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vesan Venekeskus | Satama • Huolto • Veneily</title>
+  <meta name="description" content="Portfolio-demo: venekeskuksen sivu vaalealla meriteemalla. Palvelut, hinnasto, varaussimulaattori ja yhteydenotto (Vanilla JS)." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Siirry sisältöön</a>
+
+  <header class="top" id="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="#etusivu" aria-label="Vesan Venekeskus etusivu">
+        <span class="brand__mark" aria-hidden="true">⚓</span>
+        <span class="brand__txt">
+          <strong>Vesan Venekeskus</strong>
+          <small>Satama • Huolto • Veneily</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Päävalikko">
+        <a href="#palvelut">Palvelut</a>
+        <a href="#hinnasto">Hinnasto</a>
+        <a href="#varaus">Varaus</a>
+        <a class="cta" href="#yhteys">Ota yhteyttä</a>
+      </nav>
+
+      <button class="menu" id="menuBtn" aria-label="Avaa valikko" aria-expanded="false">☰</button>
+    </div>
+
+    <div class="mobile" id="mobileNav" aria-hidden="true">
+      <a href="#palvelut">Palvelut</a>
+      <a href="#hinnasto">Hinnasto</a>
+      <a href="#varaus">Varaus</a>
+      <a href="#yhteys">Ota yhteyttä</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="etusivu">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="badge">Vaalea meriteema • Varauslaskuri • Ankkurikorjaus • Vanilla JS</p>
+          <h1>Turvallinen satama ja <span class="accent">huolto</span> veneellesi.</h1>
+          <p class="lead">
+            Portfolio-demo venekeskuksen sivusta: palvelukortit, hinnasto, varaussimulaattori ja yhteydenotto.
+            Ankkurilinkit eivät peity valikon alle.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn" href="#varaus">Tee varaus (demo)</a>
+            <a class="btn btn--ghost" href="#palvelut">Katso palvelut</a>
+          </div>
+
+          <div class="kpis" aria-label="Nostot">
+            <div class="kpi"><strong>Satamapaikat</strong><span>päivä / kausi (demo)</span></div>
+            <div class="kpi"><strong>Huolto</strong><span>moottori, pohja, varusteet</span></div>
+            <div class="kpi"><strong>Nostot</strong><span>vene ylös / alas (demo)</span></div>
+          </div>
+        </div>
+
+        <aside class="hero__card">
+          <h2>Pikainfo</h2>
+          <div class="info">
+            <div class="info__row"><span>Auki</span><strong>Ma–La 9–18</strong></div>
+            <div class="info__row"><span>Sijainti</span><strong>Rantatie 12 (demo)</strong></div>
+            <div class="info__row"><span>Päivystys</span><strong>Kesäkausi (demo)</strong></div>
+          </div>
+
+          <div class="wave" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+
+          <p class="tiny muted">Huom: Demo-sivu, ei oikea palvelu.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="palvelut">
+      <div class="wrap">
+        <div class="head">
+          <h2>Palvelut</h2>
+          <p class="muted">Selkeä palvelurakenne ja “marine UI” -ilme.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card__top">
+              <h3>Satamapaikat</h3>
+              <span class="pill">Kausi</span>
+            </div>
+            <p class="muted">
+              Päivä- ja kausipaikat, sähkö (demo), vesi (demo).
+            </p>
+            <ul>
+              <li>Portit + avainkoodi (demo)</li>
+              <li>Wi-Fi alueella (demo)</li>
+              <li>Hyvät laiturit</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>Huolto & korjaus</h3>
+              <span class="pill pill--soft">Tärkein</span>
+            </div>
+            <p class="muted">
+              Perushuolto, varusteet ja pienet korjaukset.
+            </p>
+            <ul>
+              <li>Moottorin tarkistus (demo)</li>
+              <li>Akut & sähkö (demo)</li>
+              <li>Varusteiden asennus</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>Nostot & talvisäilytys</h3>
+              <span class="pill pill--sea">Sesonki</span>
+            </div>
+            <p class="muted">
+              Vene ylös/al alas, pressutus ja säilytys.
+            </p>
+            <ul>
+              <li>Nosto varattuna</li>
+              <li>Pesu & suojaus (demo)</li>
+              <li>Talvisäilytys (demo)</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="hinnasto">
+      <div class="wrap">
+        <div class="head">
+          <h2>Hinnasto (demo)</h2>
+          <p class="muted">Yksinkertainen, luettava taulukko. Sopii yrityssivuun.</p>
+        </div>
+
+        <div class="pricing">
+          <div class="panel">
+            <h3>Satamapaikat</h3>
+            <table>
+              <thead>
+                <tr><th>Tuote</th><th>Kuvaus</th><th>Hinta</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Päiväpaikka</td><td>24 h (demo)</td><td>€15</td></tr>
+                <tr><td>Kausipaikka S</td><td>vene ≤ 5 m (demo)</td><td>€390</td></tr>
+                <tr><td>Kausipaikka M</td><td>vene 5–7 m (demo)</td><td>€520</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="panel panel--soft">
+            <h3>Huolto & nostot</h3>
+            <table>
+              <thead>
+                <tr><th>Työ</th><th>Kesto</th><th>Hinta</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Perushuolto</td><td>1–2 h (demo)</td><td>€85</td></tr>
+                <tr><td>Pohjapesu</td><td>1 h (demo)</td><td>€60</td></tr>
+                <tr><td>Nosto</td><td>15 min (demo)</td><td>€75</td></tr>
+              </tbody>
+            </table>
+
+            <p class="tiny muted">Hinnat ovat demoja — tarkoitus näyttää UI/taulukko-osaamista.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="varaus">
+      <div class="wrap">
+        <div class="head">
+          <h2>Varaus (demo)</h2>
+          <p class="muted">Valitse palvelu ja veneen pituus — JS laskee suuntaa-antavan arvion.</p>
+        </div>
+
+        <div class="book">
+          <div class="panel">
+            <h3>Varaustiedot</h3>
+
+            <label class="field">
+              <span>Palvelu</span>
+              <select id="service">
+                <option value="paiva">Satamapaikka (päivä)</option>
+                <option value="kausi">Satamapaikka (kausi)</option>
+                <option value="huolto">Huolto</option>
+                <option value="nosto">Nosto</option>
+              </select>
+            </label>
+
+            <div class="row">
+              <label class="field">
+                <span>Veneen pituus (m)</span>
+                <input id="len" type="number" min="2" max="12" step="0.1" value="5.5" />
+              </label>
+
+              <label class="field">
+                <span>Ajankohta</span>
+                <input id="date" type="date" />
+                <small class="hint">Demo: mikä tahansa päivä käy.</small>
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Lisäpalvelut</span>
+              <div class="checks">
+                <label><input type="checkbox" id="power" /> Sähkö laiturissa (demo)</label>
+                <label><input type="checkbox" id="wash" /> Pohjapesu (demo)</label>
+                <label><input type="checkbox" id="winter" /> Talvisäilytys (demo)</label>
+              </div>
+            </label>
+
+            <button class="btn btn--wide" id="calc">Laske arvio</button>
+            <p class="tiny muted">Demo-arvio. Ei oikea varausjärjestelmä.</p>
+          </div>
+
+          <aside class="panel panel--soft">
+            <h3>Arvio</h3>
+            <div class="sum">
+              <div class="sumrow"><span>Palvelu</span><strong id="sSvc">—</strong></div>
+              <div class="sumrow"><span>Vene</span><strong id="sLen">—</strong></div>
+              <div class="sumrow"><span>Lisät</span><strong id="sAdd">—</strong></div>
+              <hr />
+              <div class="sumrow total"><span>Yhteensä</span><strong id="sTotal">—</strong></div>
+            </div>
+
+            <div class="note" id="note">Paina “Laske arvio” nähdäksesi erittelyn.</div>
+
+            <a class="btn btn--ghost btn--wide" href="#yhteys">Lähetä pyyntö</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="yhteys">
+      <div class="wrap">
+        <div class="head">
+          <h2>Yhteys (demo)</h2>
+          <p class="muted">Kevyt validointi ja selkeä layout.</p>
+        </div>
+
+        <div class="contact">
+          <form class="panel" id="form" novalidate>
+            <label class="field">
+              <span>Nimi</span>
+              <input name="name" type="text" required minlength="2" placeholder="Etunimi Sukunimi" />
+              <small class="err" data-err="name"></small>
+            </label>
+
+            <div class="row">
+              <label class="field">
+                <span>Sähköposti</span>
+                <input name="email" type="email" required placeholder="nimi@email.fi" />
+                <small class="err" data-err="email"></small>
+              </label>
+              <label class="field">
+                <span>Puhelin</span>
+                <input name="phone" type="tel" required minlength="6" placeholder="+358..." />
+                <small class="err" data-err="phone"></small>
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Viesti</span>
+              <textarea name="msg" rows="5" required minlength="12" placeholder="Kerro veneen pituus, palvelu ja toivottu ajankohta..."></textarea>
+              <small class="err" data-err="msg"></small>
+            </label>
+
+            <button class="btn" type="submit">Lähetä (demo)</button>
+            <p class="tiny muted" id="formNote" aria-live="polite"></p>
+          </form>
+
+          <aside class="panel panel--soft">
+            <h3>Sataman tiedot (demo)</h3>
+            <ul class="list">
+              <li>Rantatie 12, 00000 (demo)</li>
+              <li>Ma–La 9–18</li>
+              <li>Kesäkaudella päivystys (demo)</li>
+            </ul>
+
+            <div class="map">
+              <div class="map__dot" aria-hidden="true"></div>
+              <p class="muted">Kartta-alue (demo). Voit myöhemmin upottaa Google Maps -embedin.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year"></span> Vesan Venekeskus • Portfolio-demo</p>
+      <a href="#etusivu">Ylös</a>
+      <a href="#varaus">Varaus</a>
+      <a href="#yhteys">Yhteys</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
