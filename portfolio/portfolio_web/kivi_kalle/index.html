@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kivi & Kalle | Kivipihat ja muuraukset</title>
+  <meta name="description" content="Kivi & Kalle – kivipihat, muuraukset ja piharakentaminen. Portfolio-demo: moderni yhden sivun yrityssivu." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Siirry sisältöön</a>
+
+  <header class="header" id="top">
+    <div class="container navwrap">
+      <a class="brand" href="#top" aria-label="Kivi & Kalle etusivu">
+        <span class="logo" aria-hidden="true">KK</span>
+        <span class="brandtext">
+          <strong>Kivi & Kalle</strong>
+          <small>Kivipihat • Muuraukset • Piharakentaminen</small>
+        </span>
+      </a>
+
+      <button class="menuBtn" id="menuBtn" aria-expanded="false" aria-controls="nav">
+        <span class="menuIcon" aria-hidden="true"></span>
+        <span class="srOnly">Avaa valikko</span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#palvelut" class="navlink">Palvelut</a>
+        <a href="#projektit" class="navlink">Projektit</a>
+        <a href="#faq" class="navlink">FAQ</a>
+        <a href="#yhteys" class="navlink navlink--cta">Pyydä tarjous</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container heroGrid">
+        <div class="heroText">
+          <p class="badge">Portfolio-demo • HTML/CSS/JS</p>
+          <h1>Kestäviä kiviratkaisuja pihaan — siististi ja ajallaan.</h1>
+          <p class="lead">
+            Tämä on esimerkkisivu “Kivi & Kalle” -yritykselle. Mukana sticky-navi, animaatiot,
+            palvelukortit, FAQ-accordion ja lomakkeen validointi.
+          </p>
+          <div class="heroActions">
+            <a class="btn" href="#projektit">Katso projektit</a>
+            <a class="btn btn--ghost" href="#yhteys">Ota yhteyttä</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>120+</strong>
+              <span>pihaa tehty</span>
+            </div>
+            <div class="stat">
+              <strong>4.9/5</strong>
+              <span>asiakastyytyväisyys</span>
+            </div>
+            <div class="stat">
+              <strong>48h</strong>
+              <span>vastausaika</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroCard" aria-label="Esimerkkikuva-alue">
+          <div class="cardTop">
+            <span class="chip">Pihakivetys</span>
+            <span class="chip">Tukimuurit</span>
+            <span class="chip">Portaat</span>
+          </div>
+          <div class="mockPhoto" aria-hidden="true">
+            <div class="stone s1"></div>
+            <div class="stone s2"></div>
+            <div class="stone s3"></div>
+            <div class="stone s4"></div>
+            <div class="stone s5"></div>
+          </div>
+          <p class="cardNote">
+            “Kivipihan pitää kestää Suomen sää — ja näyttää hyvältä vielä vuosien päästä.”
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="palvelut">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>Palvelut</h2>
+          <p>Selkeä paketti: suunnittelu, pohjatyöt ja viimeistely.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Kivipihat</h3>
+            <p>Betonikivi, luonnonkivi tai nupukivi — sopiva ratkaisu kohteen mukaan.</p>
+            <ul>
+              <li>Pohjatyöt & kantavuus</li>
+              <li>Saumaukset & reunatuet</li>
+              <li>Kallistukset & vedenohjaus</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Tukimuurit</h3>
+            <p>Toimivat korkeuserot, turvallisuus ja siisti ilme.</p>
+            <ul>
+              <li>Perustukset</li>
+              <li>Kuivatus</li>
+              <li>Kivivalinnat</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Pihakokonaisuudet</h3>
+            <p>Portaat, käytävät ja istutusalueiden rajaukset.</p>
+            <ul>
+              <li>3D-hahmotelma (demo)</li>
+              <li>Materiaaliehdotus</li>
+              <li>Aikataulu & työseloste</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sectionAlt" id="projektit">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>Projektit</h2>
+          <p>Näyte-esimerkit, joilla demonstroin layoutia ja komponentteja.</p>
+        </div>
+
+        <div class="projects">
+          <article class="project">
+            <div class="projectMedia" aria-hidden="true"></div>
+            <div class="projectBody">
+              <h3>Kivipolku rivitalopihalle</h3>
+              <p>Selkeä sisäänkäynti, reuna- ja valaisuratkaisut, helppo huoltaa.</p>
+              <div class="tags">
+                <span class="tag">Kivetys</span><span class="tag">Reunatuet</span><span class="tag">Viimeistely</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="projectMedia" aria-hidden="true"></div>
+            <div class="projectBody">
+              <h3>Tukimuuri ja portaat</h3>
+              <p>Korkeuserot hallintaan: muuri, portaat ja vedenohjaus samaan pakettiin.</p>
+              <div class="tags">
+                <span class="tag">Tukimuuri</span><span class="tag">Portaat</span><span class="tag">Kuivatus</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="projectMedia" aria-hidden="true"></div>
+            <div class="projectBody">
+              <h3>Piharemontti kokonaisuutena</h3>
+              <p>Vanha piha uusiksi: kiveys, istutusalueet ja rajaukset.</p>
+              <div class="tags">
+                <span class="tag">Suunnittelu</span><span class="tag">Pohjatyöt</span><span class="tag">Pihakokonaisuus</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>FAQ</h2>
+          <p>Usein kysytyt — ja samalla pieni JS-demo (accordion).</p>
+        </div>
+
+        <div class="faq" id="faqList">
+          <button class="faqItem" aria-expanded="false">
+            <span>Mitä kivipihan hinta riippuu?</span>
+            <span class="faqIcon" aria-hidden="true"></span>
+          </button>
+          <div class="faqPanel" hidden>
+            <p>Laajuus, pohjatyöt, materiaalit ja kohteen saavutettavuus vaikuttavat eniten.</p>
+          </div>
+
+          <button class="faqItem" aria-expanded="false">
+            <span>Kuinka kauan työ kestää?</span>
+            <span class="faqIcon" aria-hidden="true"></span>
+          </button>
+          <div class="faqPanel" hidden>
+            <p>Tyypillisesti 2–7 päivää kohteesta riippuen. Aikataulu sovitaan aina etukäteen.</p>
+          </div>
+
+          <button class="faqItem" aria-expanded="false">
+            <span>Voiko työn tehdä osissa?</span>
+            <span class="faqIcon" aria-hidden="true"></span>
+          </button>
+          <div class="faqPanel" hidden>
+            <p>Kyllä. Esim. ensin pohjatyöt ja kulkuväylä, sitten tukimuuri ja viimeistely myöhemmin.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sectionAlt" id="yhteys">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>Pyydä tarjous</h2>
+          <p>Lomake ei lähetä oikeasti sähköpostia — se on validointi- ja UX-demo.</p>
+        </div>
+
+        <div class="contactGrid">
+          <form class="form" id="contactForm" novalidate>
+            <label>
+              <span>Nimi</span>
+              <input name="name" type="text" placeholder="Etunimi Sukunimi" required minlength="2" />
+              <small class="error" data-error-for="name"></small>
+            </label>
+
+            <label>
+              <span>Sähköposti</span>
+              <input name="email" type="email" placeholder="nimi@esimerkki.fi" required />
+              <small class="error" data-error-for="email"></small>
+            </label>
+
+            <label>
+              <span>Kuvaus</span>
+              <textarea name="message" rows="5" placeholder="Kerro kohteesta lyhyesti..." required minlength="10"></textarea>
+              <small class="error" data-error-for="message"></small>
+            </label>
+
+            <button class="btn" type="submit">Lähetä pyyntö</button>
+            <p class="formNote" id="formNote" aria-live="polite"></p>
+          </form>
+
+          <aside class="aside">
+            <h3>Yhteystiedot</h3>
+            <p><strong>Kivi & Kalle</strong><br>Esimerkkitie 10, 00000 Demo</p>
+            <p>Puhelin: <a href="#">040 123 4567</a><br>Sähköposti: <a href="#">hello@kivikalle.fi</a></p>
+            <div class="asideBox">
+              <p><strong>Vastaamme nopeasti</strong></p>
+              <p>Usein viimeistään 48 tunnin sisällä.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container foot">
+      <p>© <span id="year"></span> Kivi & Kalle • Portfolio-demo</p>
+      <a href="#top" class="toTop">Takaisin ylös ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
