@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Web | Demo Gallery</title>
+  <meta name="description" content="Portfolio hub: web-demoja (HTML/CSS/JS). Sisältää haku- ja suodatusnäkymän." />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <a class="skip" href="#main">Siirry sisältöön</a>
+
+  <header class="top">
+    <div class="wrap top__inner">
+      <div class="brand">
+        <div class="brand__mark" aria-hidden="true">🌐</div>
+        <div class="brand__txt">
+          <strong>Web Portfolio</strong>
+          <small>Demo Gallery • HTML / CSS / JS</small>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Päävalikko">
+        <a href="#demos">Demot</a>
+        <a href="#about">Tietoa</a>
+        <a class="cta" href="#howto">Avaa lokaalisti</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="badge">Hub-sivu • Haku & suodatus • Selkeä portfolio-näkymä</p>
+          <h1>Web-demoja yhdestä näkymästä.</h1>
+          <p class="lead">
+            Tämä sivu listaa kaikki <strong>portfolio_web</strong>-kansion demot.
+            Jokainen demo on oma pieni sivusto omassa kansiossaan.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn" href="#demos">Selaa demoja</a>
+            <a class="btn btn--ghost" href="#about">Mitä tämä näyttää?</a>
+          </div>
+
+          <div class="kpis" aria-label="Nostot">
+            <div class="kpi"><strong>10 demo-sivua</strong><span>eri teemoilla</span></div>
+            <div class="kpi"><strong>Vanilla JS</strong><span>interaktiot & UI</span></div>
+            <div class="kpi"><strong>Selkeä rakenne</strong><span>kansiot + README</span></div>
+          </div>
+        </div>
+
+        <aside class="hero__card" aria-label="Haku ja suodatus">
+          <h2>Hae ja suodata</h2>
+          <p class="muted">Kirjoita hakusana tai suodata tagilla.</p>
+
+          <div class="controls">
+            <label class="field">
+              <span>Haku</span>
+              <input id="q" type="text" placeholder="Esim. vene, puu, metalli, kukka..." />
+            </label>
+
+            <label class="field">
+              <span>Tagi</span>
+              <select id="tag">
+                <option value="all">Kaikki</option>
+                <option value="business">Business</option>
+                <option value="service">Palvelu</option>
+                <option value="creative">Luova</option>
+                <option value="shop">Verkkokauppa</option>
+                <option value="calculator">Laskuri/JS</option>
+                <option value="light">Vaalea teema</option>
+                <option value="dark">Tumma teema</option>
+              </select>
+            </label>
+
+            <div class="row">
+              <button class="btn btn--wide" id="reset">Tyhjennä</button>
+            </div>
+          </div>
+
+          <div class="mini">
+            <div><span>Näkyvissä</span><strong id="count">0</strong></div>
+            <div><span>Yhteensä</span><strong id="total">0</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="demos">
+      <div class="wrap">
+        <div class="head">
+          <h2>Demo Gallery</h2>
+          <p class="muted">Klikkaa korttia avataksesi demoprojektin.</p>
+        </div>
+
+        <div class="grid" id="grid" aria-live="polite"></div>
+
+        <div class="empty" id="empty" hidden>
+          <h3>Ei tuloksia</h3>
+          <p class="muted">Kokeile toista hakusanaa tai valitse “Kaikki”.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="about">
+      <div class="wrap">
+        <div class="head">
+          <h2>Tietoa</h2>
+          <p class="muted">Mitä tämä portfolio-osio pyrkii näyttämään?</p>
+        </div>
+
+        <div class="two">
+          <div class="panel">
+            <h3>Oppimisen painopiste</h3>
+            <ul class="list">
+              <li>HTML-semanttiikka ja rakenne</li>
+              <li>CSS-layout (grid/flex), responsiivisuus</li>
+              <li>Vanilla JS (DOM, lomakkeet, laskurit)</li>
+              <li>Projektin esittely ja README-dokumentointi</li>
+            </ul>
+          </div>
+
+          <div class="panel panel--soft">
+            <h3>Rakennemalli</h3>
+            <p class="muted">
+              Jokainen demo on omassa kansiossaan muodossa:
+            </p>
+            <pre class="code">portfolio_web/
+  demo_nimi/
+    index.html
+    style.css
+    script.js
+    README.md</pre>
+            <p class="tiny muted">
+              Näin jokainen demo on itsenäinen ja helppo avata.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="howto">
+      <div class="wrap">
+        <div class="head">
+          <h2>Avaaminen lokaalisti</h2>
+          <p class="muted">Suositus: VS Code Live Server, jotta linkit ja reitit toimivat helposti.</p>
+        </div>
+
+        <div class="two">
+          <div class="panel">
+            <h3>Vaihtoehto 1: Live Server</h3>
+            <ol class="list">
+              <li>Avaa kansio <code>10_portfolio_site</code> VS Codessa</li>
+              <li>Avaa <code>portfolio/portfolio_web/index.html</code></li>
+              <li>Right click → <strong>Open with Live Server</strong></li>
+            </ol>
+          </div>
+
+          <div class="panel panel--soft">
+            <h3>Vaihtoehto 2: suoraan selaimessa</h3>
+            <p class="muted">
+              Voit avata tiedoston suoraan, mutta joissain asetuksissa selain rajoittaa tiettyjä toimintoja.
+            </p>
+            <p class="tiny muted">
+              Tämä hub-sivu toimii yleensä hyvin myös suoraan (file://), koska linkit ovat suhteellisia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year"></span> • Web Portfolio Hub</p>
+      <a href="#demos">Demot</a>
+      <a href="#about">Tietoa</a>
+      <a href="#howto">Ohje</a>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
