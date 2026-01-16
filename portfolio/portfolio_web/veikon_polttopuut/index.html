@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veikon Polttopuut | Kuivaa klapia kotiin</title>
+  <meta name="description" content="Portfolio-demo: polttopuiden myyntisivu. Vaalea rustic-teema, hintalaskuri, toimitusalue ja tarjouspyyntö (Vanilla JS)." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Siirry sisältöön</a>
+
+  <header class="top" id="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="#etusivu" aria-label="Veikon Polttopuut etusivu">
+        <span class="brand__mark" aria-hidden="true">🪵</span>
+        <span class="brand__txt">
+          <strong>Veikon Polttopuut</strong>
+          <small>Klapit • Toimitus • Pihapino</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Päävalikko">
+        <a href="#tuotteet">Tuotteet</a>
+        <a href="#laskuri">Hinta-arvio</a>
+        <a href="#toimitus">Toimitus</a>
+        <a class="cta" href="#yhteys">Pyydä tarjous</a>
+      </nav>
+
+      <button class="menu" id="menuBtn" aria-label="Avaa valikko" aria-expanded="false">☰</button>
+    </div>
+
+    <div class="mobile" id="mobileNav" aria-hidden="true">
+      <a href="#tuotteet">Tuotteet</a>
+      <a href="#laskuri">Hinta-arvio</a>
+      <a href="#toimitus">Toimitus</a>
+      <a href="#yhteys">Pyydä tarjous</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="etusivu">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="badge">Vaalea rustic-teema • Laskuri • Ankkurikorjaus • Vanilla JS</p>
+          <h1>Kuivaa klapia <span class="accent">kotiin asti</span> — helposti.</h1>
+          <p class="lead">
+            Portfolio-demo polttopuiden myyntisivusta. Mukana hintalaskuri, toimitusalue-check ja lomake.
+            Ankkurilinkit eivät peity valikon alle.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn" href="#laskuri">Laske hinta</a>
+            <a class="btn btn--ghost" href="#tuotteet">Katso tuotteet</a>
+          </div>
+
+          <div class="kpis" aria-label="Nostot">
+            <div class="kpi"><strong>Kuivaa</strong><span>valmiiksi varastoitua (demo)</span></div>
+            <div class="kpi"><strong>Toimitus</strong><span>pihalle / pinoon (demo)</span></div>
+            <div class="kpi"><strong>Nopea</strong><span>2–5 arkipäivää (demo)</span></div>
+          </div>
+        </div>
+
+        <aside class="hero__card">
+          <h2>Pikatoimitusalue (demo)</h2>
+          <p class="muted">Syötä postinumero — näet suuntaa-antavan toimitusmaksun.</p>
+
+          <div class="zip">
+            <input id="zip" inputmode="numeric" placeholder="Esim. 34980" maxlength="5" />
+            <button class="btn btn--small" id="zipCheck">Tarkista</button>
+          </div>
+
+          <div class="callout" id="zipResult">
+            Kirjoita postinumero ja paina “Tarkista”.
+          </div>
+
+          <p class="tiny muted">Huom: Demo. Ei oikea myyntipalvelu.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="tuotteet">
+      <div class="wrap">
+        <div class="head">
+          <h2>Tuotteet</h2>
+          <p class="muted">Valitse puulaji ja erä — sopii takkaan, saunaan ja tulisijaan (demo).</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card__top">
+              <h3>Koivuklapi</h3>
+              <span class="pill">Suosikki</span>
+            </div>
+            <ul>
+              <li>Hyvä lämpöarvo</li>
+              <li>Siisti pino</li>
+              <li>Sopii takkaan ja saunaan</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>Sekaklapi</h3>
+              <span class="pill pill--soft">Edullinen</span>
+            </div>
+            <ul>
+              <li>Sopii peruskäyttöön</li>
+              <li>Hyvä hinta–laatu</li>
+              <li>Toimii ulkotulessa</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3>Sytykkeet</h3>
+              <span class="pill pill--ember">Nopea</span>
+            </div>
+            <ul>
+              <li>Helppo sytytys</li>
+              <li>Kuiva ja kevyt</li>
+              <li>Lisänä klapien kanssa</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="laskuri">
+      <div class="wrap">
+        <div class="head">
+          <h2>Hinta-arvio (demo)</h2>
+          <p class="muted">Valitse määrä, puulaji ja toimitustapa — JS laskee erittelyn.</p>
+        </div>
+
+        <div class="quote">
+          <div class="panel">
+            <h3>Valinnat</h3>
+
+            <label class="field">
+              <span>Puulaji</span>
+              <select id="wood">
+                <option value="koivu">Koivu</option>
+                <option value="seka">Sekapuu</option>
+                <option value="sytyke">Sytykkeet</option>
+              </select>
+            </label>
+
+            <div class="row">
+              <label class="field">
+                <span>Määrä (säkit / erät)</span>
+                <input id="qty" type="number" min="1" value="5" />
+              </label>
+
+              <label class="field">
+                <span>Toimitus</span>
+                <select id="delivery">
+                  <option value="nouto">Nouto</option>
+                  <option value="piha">Toimitus pihalle</option>
+                  <option value="pino">Toimitus + pinoaminen</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Postinumero (toimitusmaksu)</span>
+              <input id="zip2" inputmode="numeric" placeholder="Esim. 34980" maxlength="5" />
+              <small class="hint">Demo: postinumero vaikuttaa toimitusmaksuun.</small>
+            </label>
+
+            <button class="btn btn--wide" id="calc">Laske arvio</button>
+            <p class="tiny muted">Demo-arvio — oikea hinta voi vaihdella alueen ja saatavuuden mukaan.</p>
+          </div>
+
+          <aside class="panel panel--soft">
+            <h3>Erittely</h3>
+            <div class="sum">
+              <div class="sumrow"><span>Tuote</span><strong id="sItem">—</strong></div>
+              <div class="sumrow"><span>Yksikköhinta</span><strong id="sUnit">—</strong></div>
+              <div class="sumrow"><span>Määrä</span><strong id="sQty">—</strong></div>
+              <div class="sumrow"><span>Välisummaa</span><strong id="sSub">—</strong></div>
+              <div class="sumrow"><span>Toimitus</span><strong id="sDel">—</strong></div>
+              <hr />
+              <div class="sumrow total"><span>Yhteensä</span><strong id="sTotal">—</strong></div>
+            </div>
+
+            <div class="explain" id="explain">
+              Paina “Laske arvio” nähdäksesi erittelyn.
+            </div>
+
+            <a class="btn btn--ghost btn--wide" href="#yhteys">Pyydä oikea tarjous</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="toimitus">
+      <div class="wrap">
+        <div class="head">
+          <h2>Toimitus & käytännöt</h2>
+          <p class="muted">Selkeä osio tekee sivusta “oikean yrityssivun” tuntuisen.</p>
+        </div>
+
+        <div class="two">
+          <div class="panel">
+            <h3>Miten toimitus toimii (demo)</h3>
+            <ol class="list">
+              <li>Valitse tuote ja määrä</li>
+              <li>Sovitaan toimituspäivä</li>
+              <li>Toimitus pihalle tai pinoon</li>
+              <li>Maksu sovitusti (demo)</li>
+            </ol>
+          </div>
+
+          <div class="panel panel--soft">
+            <h3>Vinkit polttopuille</h3>
+            <ul class="list">
+              <li>Säilytä kuivassa ja ilmavasti</li>
+              <li>Älä peitä täysin muovilla</li>
+              <li>Hyvä sytyke säästää klapeja</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="yhteys">
+      <div class="wrap">
+        <div class="head">
+          <h2>Tarjouspyyntö (demo)</h2>
+          <p class="muted">Kevyt validointi — tarkoitus näyttää lomakeosaamista.</p>
+        </div>
+
+        <div class="contact">
+          <form class="panel" id="form" novalidate>
+            <label class="field">
+              <span>Nimi</span>
+              <input name="name" type="text" required minlength="2" placeholder="Etunimi Sukunimi" />
+              <small class="err" data-err="name"></small>
+            </label>
+
+            <div class="row">
+              <label class="field">
+                <span>Sähköposti</span>
+                <input name="email" type="email" required placeholder="nimi@email.fi" />
+                <small class="err" data-err="email"></small>
+              </label>
+
+              <label class="field">
+                <span>Puhelin</span>
+                <input name="phone" type="tel" required minlength="6" placeholder="+358..." />
+                <small class="err" data-err="phone"></small>
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Toive</span>
+              <textarea name="msg" rows="5" required minlength="12" placeholder="Mitä tilataan, määrä, postinumero, toimitus pihalle/pinoon..."></textarea>
+              <small class="err" data-err="msg"></small>
+            </label>
+
+            <button class="btn" type="submit">Lähetä (demo)</button>
+            <p class="tiny muted" id="formNote" aria-live="polite"></p>
+          </form>
+
+          <aside class="panel panel--soft">
+            <h3>Nopea yhteenveto</h3>
+            <ul class="list">
+              <li>Puulajit: koivu / sekapuu / sytykkeet (demo)</li>
+              <li>Toimitus: nouto / piha / pino</li>
+              <li>Postinumero vaikuttaa toimitusmaksuun (demo)</li>
+            </ul>
+
+            <div class="stamp" aria-hidden="true">
+              <span>🔥</span>
+              <strong>Kuivaa & siistiä</strong>
+              <small>portfolio-demo</small>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year"></span> Veikon Polttopuut • Portfolio-demo</p>
+      <a href="#etusivu">Ylös</a>
+      <a href="#laskuri">Laskuri</a>
+      <a href="#yhteys">Yhteys</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
