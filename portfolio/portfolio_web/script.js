@@ -1,3 +1,14 @@
+// --- Config (monorepo Pages) ---
+const GITHUB_USER = "patrikpentikainen";
+const REPO_NAME = "developer-portfolio";
+
+// Pages base for this folder (portfolio_web hub lives here)
+const PAGES_BASE = `https://${GITHUB_USER}.github.io/${REPO_NAME}/portfolio/portfolio_web/`;
+
+// GitHub base to the folder tree (handy for source browsing)
+const GH_BASE = `https://github.com/${GITHUB_USER}/${REPO_NAME}/tree/main/portfolio/portfolio_web/`;
+
+// Year
 document.getElementById("year").textContent = String(new Date().getFullYear());
 
 const demos = [
@@ -14,7 +25,7 @@ const demos = [
     tags: ["business", "service", "light"]
   },
   {
-    name: "Konemiehen ja pojan vaihtokone",
+    name: "Konemiehen & Pojan Vaihtokone",
     folder: "konemiehen_ja_pojan_vaihtokone",
     desc: "Kone-/vaihtokonepalvelun demo. Sisältöosioita ja CTA.",
     tags: ["business", "service"]
@@ -26,7 +37,7 @@ const demos = [
     tags: ["creative", "business", "light"]
   },
   {
-    name: "Lauran pomppulinna",
+    name: "Lauran Pomppulinna",
     folder: "lauran_pomppulinna",
     desc: "Vauhdikas teema + selkeä varaus/CTA (demo).",
     tags: ["creative", "service", "light"]
@@ -77,11 +88,31 @@ function pill(t) {
   return `<span class="pill">${t}</span>`;
 }
 
+function pagesDemoUrl(folder) {
+  // Always point to the correct GitHub Pages location
+  return `${PAGES_BASE}${folder}/`;
+}
+
+function pagesReadmeUrl(folder) {
+  // GitHub Pages serves README.md as plain text (fine), but we can also link to GitHub view
+  // If you prefer GitHub view only, use githubReadmeUrl() instead.
+  return `${PAGES_BASE}${folder}/README.md`;
+}
+
+function githubFolderUrl(folder) {
+  return `${GH_BASE}${folder}`;
+}
+
+function githubReadmeUrl(folder) {
+  return `https://github.com/${GITHUB_USER}/${REPO_NAME}/blob/main/portfolio/portfolio_web/${folder}/README.md`;
+}
+
 function card(d) {
   const pills = d.tags.map(pill).join("");
-  // Linkit: ./kansio/ (toimii myös ilman index.html)
-  const href = `./${d.folder}/`;
-  const readme = `./${d.folder}/README.md`;
+
+  const demoHref = pagesDemoUrl(d.folder);
+  const readmeHref = githubReadmeUrl(d.folder); // nicer reading experience than raw md on Pages
+  const sourceHref = githubFolderUrl(d.folder);
 
   return `
     <article class="card">
@@ -91,8 +122,9 @@ function card(d) {
       </div>
       <p class="desc">${d.desc}</p>
       <div class="actions">
-        <a class="open" href="${href}">Avaa demo</a>
-        <a class="link" href="${readme}">README</a>
+        <a class="open" href="${demoHref}" target="_blank" rel="noreferrer">Avaa demo</a>
+        <a class="link" href="${readmeHref}" target="_blank" rel="noreferrer">README</a>
+        <a class="link" href="${sourceHref}" target="_blank" rel="noreferrer">Source</a>
       </div>
     </article>
   `;
