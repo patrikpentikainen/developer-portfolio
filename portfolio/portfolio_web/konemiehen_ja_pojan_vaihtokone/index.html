@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konemiehen & Pojan Vaihtokone</title>
+  <meta name="description" content="Portfolio-demo: varaosat, vaihtokoneet ja huoltopalvelut. Retro-industrial yhden sivun sivusto + laskuri + modaalilomake." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#">
+        <span class="brand__mark" aria-hidden="true">KPV</span>
+        <span class="brand__text">
+          <strong>Konemiehen & Pojan</strong>
+          <small>Vaihtokone • Varaosat • Huolto</small>
+        </span>
+      </a>
+
+      <div class="topbar__actions">
+        <a class="pill" href="#hinnasto">Hinnasto</a>
+        <a class="pill" href="#vertailu">Vertailu</a>
+        <button class="pill pill--cta" id="openQuote">Pyydä tarjous</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__left">
+          <p class="label">Portfolio-demo • Light theme • Vanilla JS</p>
+          <h1>Kun kone pysähtyy, meiltä löytyy <span class="accent">vaihtokone</span> ja ratkaisu.</h1>
+          <p class="lead">
+            Tämä sivu on esimerkkiprojekti: retro-industrial ilme, hinnasto, vertailutaulukko, laskuri ja modaalinen tarjouspyyntö.
+          </p>
+
+          <div class="hero__badges">
+            <span class="badge">Nopea toimitus</span>
+            <span class="badge">Testatut vaihtolaitteet</span>
+            <span class="badge">Selkeä hinnoittelu</span>
+          </div>
+
+          <div class="hero__cta">
+            <a class="btn" href="#hinnasto">Katso palvelut</a>
+            <button class="btn btn--ghost" id="openQuote2">Pyydä tarjous</button>
+          </div>
+
+          <div class="ticker" aria-label="Palveluinfo">
+            <div class="ticker__track">
+              <span>• Vaihtokoneet</span>
+              <span>• Varaosat</span>
+              <span>• Huolto</span>
+              <span>• Konevuokraus</span>
+              <span>• Diagnostiikka</span>
+              <span>•</span>
+              <span>Vaihtokoneet</span>
+              <span>Varaosat</span>
+              <span>Huolto</span>
+              <span>Konevuokraus</span>
+              <span>Diagnostiikka</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero__right">
+          <div class="panel">
+            <div class="panel__head">
+              <h2>Hinta-arvio (demo)</h2>
+              <p>Valitse tyyppi ja päivät – näet karkean arvion.</p>
+            </div>
+
+            <div class="formRow">
+              <label>
+                <span>Palvelu</span>
+                <select id="service">
+                  <option value="exchange">Vaihtokone</option>
+                  <option value="rental">Vuokrakone</option>
+                  <option value="service">Huolto</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Päivät</span>
+                <input id="days" type="number" min="1" max="60" value="3" />
+              </label>
+            </div>
+
+            <div class="formRow">
+              <label>
+                <span>Kiireellinen (24–48h)</span>
+                <select id="rush">
+                  <option value="no">Ei</option>
+                  <option value="yes">Kyllä (+15%)</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Toimitus</span>
+                <select id="delivery">
+                  <option value="pickup">Nouto</option>
+                  <option value="delivery">Toimitus (+49€)</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="estimate">
+              <div>
+                <small>Arvio</small>
+                <strong id="estimateValue">—</strong>
+              </div>
+              <button class="btn btn--small" id="copyEstimate">Kopioi arvio</button>
+            </div>
+
+            <p class="note">
+              Huom: Tämä on portfolio-demo. Arviot ovat esimerkkilukuja.
+            </p>
+          </div>
+
+          <div class="panel panel--mini">
+            <h3>Nopeus & laatu</h3>
+            <ul class="check">
+              <li>Testattu laite ennen luovutusta</li>
+              <li>Selkeä raportti (demo)</li>
+              <li>Puhelintuki 9–17</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="hinnasto">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Hinnasto</h2>
+          <p>Kolme selkeää pakettia – sopii useimpiin tilanteisiin.</p>
+        </div>
+
+        <div class="pricing">
+          <article class="priceCard">
+            <div class="priceCard__top">
+              <h3>Perus</h3>
+              <p>Kun tarvitset nopeasti toimivan ratkaisun.</p>
+            </div>
+            <div class="price">
+              <strong>129€</strong><span>/päivä</span>
+            </div>
+            <ul>
+              <li>Vaihtokone (perusluokka)</li>
+              <li>Perustestaus</li>
+              <li>Nouto varastolta</li>
+            </ul>
+            <button class="btn btn--wide" data-plan="Perus">Valitse Perus</button>
+          </article>
+
+          <article class="priceCard priceCard--featured">
+            <div class="ribbon" aria-hidden="true">Suosituin</div>
+            <div class="priceCard__top">
+              <h3>Pro</h3>
+              <p>Kun haluat varmuuden ja selkeän dokumentoinnin.</p>
+            </div>
+            <div class="price">
+              <strong>179€</strong><span>/päivä</span>
+            </div>
+            <ul>
+              <li>Vaihtokone (pro-luokka)</li>
+              <li>Testiraportti (demo)</li>
+              <li>Puhelintuki</li>
+            </ul>
+            <button class="btn btn--wide" data-plan="Pro">Valitse Pro</button>
+          </article>
+
+          <article class="priceCard">
+            <div class="priceCard__top">
+              <h3>Max</h3>
+              <p>Kriittisiin keikkoihin ja kiireellisiin toimituksiin.</p>
+            </div>
+            <div class="price">
+              <strong>249€</strong><span>/päivä</span>
+            </div>
+            <ul>
+              <li>Premium-vaihtokone</li>
+              <li>Kiireprioriteetti</li>
+              <li>Toimitus (demo)</li>
+            </ul>
+            <button class="btn btn--wide" data-plan="Max">Valitse Max</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="vertailu">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Vertailu</h2>
+          <p>Yksi taulukko – nopeasti näkyy erot.</p>
+        </div>
+
+        <div class="tableWrap" role="region" aria-label="Vertailutaulukko" tabindex="0">
+          <table class="compare">
+            <thead>
+              <tr>
+                <th>Ominaisuus</th>
+                <th>Perus</th>
+                <th>Pro</th>
+                <th>Max</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Testaus</td>
+                <td>✓</td>
+                <td>✓✓</td>
+                <td>✓✓✓</td>
+              </tr>
+              <tr>
+                <td>Raportti</td>
+                <td>—</td>
+                <td>✓</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Toimitus</td>
+                <td>—</td>
+                <td>Lisämaksu</td>
+                <td>✓ (demo)</td>
+              </tr>
+              <tr>
+                <td>Prioriteetti</td>
+                <td>—</td>
+                <td>—</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Tuki</td>
+                <td>Perus</td>
+                <td>Puhelin</td>
+                <td>Puhelin + prioriteetti</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <p><strong>Vinkki:</strong> Tämä taulukko on tehty tarkoituksella “paperimaiseksi” (eri fiilis kuin aiemmissa sivuissa).</p>
+          <button class="pill pill--cta" id="openQuote3">Pyydä tarjous</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="referenssit">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Referenssit (demo)</h2>
+          <p>Lyhyet “korjaamotarina”-kortit – eri rakenne kuin perus palvelukortit.</p>
+        </div>
+
+        <div class="stories">
+          <article class="story">
+            <h3>“Työmaa jatkui samana päivänä.”</h3>
+            <p>Vaihtolaite noudettiin, ja takaisin töihin. Dokumentointi mukaan. (Demo-teksti)</p>
+            <p class="meta">— Raksa Oy • Hämeenlinna</p>
+          </article>
+          <article class="story">
+            <h3>“Huolto löysi vian nopeasti.”</h3>
+            <p>Diagnostiikka + osat. Selkeä kustannusarvio. (Demo-teksti)</p>
+            <p class="meta">— Konepalvelu K • Tampere</p>
+          </article>
+          <article class="story">
+            <h3>“Max-paketti pelasti kiirekeikan.”</h3>
+            <p>Kiireellinen toimitus ja prioriteetti. (Demo-teksti)</p>
+            <p class="meta">— Sora & Sähkö • Seinäjoki</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year"></span> Konemiehen & Pojan Vaihtokone • Portfolio-demo</p>
+      <div class="footer__links">
+        <a href="#hinnasto">Hinnasto</a>
+        <a href="#vertailu">Vertailu</a>
+        <button class="linkBtn" id="openQuote4">Tarjouspyyntö</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close="true"></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__head">
+        <h2 id="modalTitle">Tarjouspyyntö (demo)</h2>
+        <button class="iconBtn" id="closeModal" aria-label="Sulje">✕</button>
+      </div>
+
+      <form id="quoteForm" class="modal__form" novalidate>
+        <div class="grid2">
+          <label>
+            <span>Nimi</span>
+            <input name="name" type="text" required minlength="2" placeholder="Etunimi Sukunimi" />
+            <small class="err" data-err="name"></small>
+          </label>
+
+          <label>
+            <span>Sähköposti</span>
+            <input name="email" type="email" required placeholder="nimi@esimerkki.fi" />
+            <small class="err" data-err="email"></small>
+          </label>
+        </div>
+
+        <label>
+          <span>Valittu paketti</span>
+          <input name="plan" id="planInput" type="text" readonly value="—" />
+        </label>
+
+        <label>
+          <span>Viesti</span>
+          <textarea name="message" rows="4" required minlength="10" placeholder="Kuvaile tarve lyhyesti..."></textarea>
+          <small class="err" data-err="message"></small>
+        </label>
+
+        <div class="modal__actions">
+          <button class="btn" type="submit">Lähetä (demo)</button>
+          <button class="btn btn--ghost" type="button" data-close="true">Peruuta</button>
+        </div>
+
+        <p class="modal__note" id="modalNote" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
