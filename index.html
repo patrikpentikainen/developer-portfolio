@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio – Web Demos</title>
+  <meta name="description" content="Portfolio: 10 erilaista web-sivudemoprojektia (HTML/CSS/JS). Live-demot ja GitHub-repot." />
+
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --panel:#111a2a;
+      --panel2:#0f1626;
+      --border:#22314f;
+      --text:#eaf0ff;
+      --muted:#b8c3d9;
+      --muted2:#8fa0bf;
+      --brand:#3b82f6;
+      --brand2:#2563eb;
+      --good:#22c55e;
+      --shadow: 0 12px 28px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(59,130,246,.18), transparent 55%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(34,197,94,.12), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+    }
+
+    a{ color:inherit; }
+    .container{ max-width:1100px; margin:0 auto; padding: 26px 18px 54px; }
+
+    /* Header */
+    .hero{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      align-items:flex-end;
+      justify-content:space-between;
+      padding: 18px 18px 6px;
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(17,26,42,.9), rgba(17,26,42,.65));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-left{ min-width: 260px; }
+    .kicker{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      font-size:12px;
+      color:var(--muted);
+      padding: 6px 10px;
+      border:1px solid var(--border);
+      background: rgba(15,22,38,.7);
+      border-radius: 999px;
+    }
+    h1{ margin:10px 0 8px; font-size: 34px; letter-spacing:-0.5px; }
+    .subtitle{ margin:0 0 14px; color:var(--muted); max-width: 62ch; line-height:1.55; }
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      color:var(--muted2);
+      font-size:13px;
+      margin-bottom: 10px;
+    }
+    .pill{
+      padding:6px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background: rgba(15,22,38,.55);
+    }
+
+    .hero-right{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-width: 280px;
+      flex: 1;
+      align-items: stretch;
+      padding-bottom: 10px;
+    }
+
+    /* Controls */
+    .controls{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .search{
+      flex: 1;
+      min-width: 240px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      background: rgba(15,22,38,.7);
+      border-radius: 14px;
+    }
+    .search input{
+      width:100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size:14px;
+    }
+    .btn{
+      cursor:pointer;
+      border:none;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: var(--brand);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform .08s ease, background .15s ease;
+      white-space: nowrap;
+    }
+    .btn:hover{ background: var(--brand2); }
+    .btn:active{ transform: translateY(1px); }
+    .btn.secondary{
+      background: rgba(15,22,38,.7);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 600;
+    }
+    .btn.secondary:hover{ background: rgba(15,22,38,.95); }
+
+    .filters{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top: 6px;
+    }
+    .chip{
+      cursor:pointer;
+      user-select:none;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 7px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(15,22,38,.55);
+      transition: background .15s ease, color .15s ease, border-color .15s ease;
+    }
+    .chip.active{
+      color: white;
+      background: rgba(59,130,246,.22);
+      border-color: rgba(59,130,246,.55);
+    }
+
+    /* Grid */
+    .section-title{
+      margin: 22px 2px 10px;
+      color: var(--muted);
+      font-size: 14px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .count{ color: var(--muted2); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(17,26,42,.9), rgba(17,26,42,.68));
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: 0 10px 22px rgba(0,0,0,.22);
+      display:flex;
+      flex-direction:column;
+      min-height: 180px;
+    }
+    .card-top{
+      display:flex;
+      gap:10px;
+      justify-content:space-between;
+      align-items:flex-start;
+    }
+    .badge{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border:1px solid var(--border);
+      color: var(--muted);
+      background: rgba(15,22,38,.6);
+      white-space: nowrap;
+    }
+    .badge .dot{
+      width:8px; height:8px; border-radius:50%;
+      background: rgba(34,197,94,.85);
+      box-shadow: 0 0 0 4px rgba(34,197,94,.12);
+    }
+
+    .title{
+      margin: 10px 0 6px;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+    .desc{
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      flex: 1;
+    }
+    .tags{
+      display:flex;
+      gap:6px;
+      flex-wrap:wrap;
+      margin-bottom: 12px;
+    }
+    .tag{
+      font-size: 12px;
+      color: var(--muted);
+      padding: 5px 9px;
+      border-radius: 999px;
+      border:1px solid var(--border);
+      background: rgba(15,22,38,.55);
+    }
+
+    .links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:auto;
+    }
+    .linkbtn{
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 700;
+      background: var(--brand);
+      color: #fff;
+      transition: transform .08s ease, background .15s ease;
+    }
+    .linkbtn:hover{ background: var(--brand2); }
+    .linkbtn:active{ transform: translateY(1px); }
+
+    .linkbtn.ghost{
+      background: rgba(15,22,38,.7);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 700;
+    }
+    .linkbtn.ghost:hover{ background: rgba(15,22,38,.95); }
+
+    .empty{
+      margin-top: 14px;
+      border: 1px dashed rgba(143,160,191,.35);
+      border-radius: var(--radius);
+      padding: 20px;
+      color: var(--muted);
+      background: rgba(15,22,38,.35);
+    }
+
+    footer{
+      margin-top: 26px;
+      color: var(--muted2);
+      text-align:center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 520px){
+      h1{ font-size: 28px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <section class="hero">
+      <div class="hero-left">
+        <div class="kicker">🧩 10 demoa • HTML/CSS/JS • GitHub Pages</div>
+        <h1>Web-portfolio</h1>
+        <p class="subtitle">
+          Esittely kokoelmasta eri tyylisiä nettisivu-demoja. Jokaisella demolla on oma repo ja live-linkki.
+          Suunniteltu niin, että osaaminen näkyy nopeasti (UI, layout, responsiivisuus, rakenne).
+        </p>
+        <div class="meta">
+          <span class="pill">🔎 Haku + tagifiltterit</span>
+          <span class="pill">📌 1 demo = 1 repo</span>
+          <span class="pill">🚀 Live: GitHub Pages</span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="controls">
+          <div class="search" title="Hae nimestä, kuvauksesta tai tageista">
+            🔍
+            <input id="search" type="text" placeholder="Hae… (esim. landing, e-commerce, responsive)" />
+          </div>
+          <button class="btn secondary" id="resetBtn" type="button">Nollaa</button>
+        </div>
+
+        <div class="filters" id="filters"></div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <div>Projektit</div>
+      <div class="count"><span id="visibleCount"></span> / <span id="totalCount"></span> näkyvissä</div>
+    </div>
+
+    <section class="grid" id="grid"></section>
+
+    <div class="empty" id="empty" style="display:none;">
+      Ei osumia. Kokeile toista hakusanaa tai poista filtteri.
+    </div>
+
+    <footer>
+      © <span id="y"></span> • Portfolio • Päivitä linkit: YOUR_GITHUB_USERNAME + Pages-URLit
+    </footer>
+  </div>
+
+  <script>
+    // ✅ Muuta tämä:
+    const GITHUB_USER = "YOUR_GITHUB_USERNAME";
+
+    // Projektit (muokkaa tarvittaessa kuvauksia/tageja + live-linkkejä)
+    // Live-linkit: täytä kun otat Pagesin käyttöön per demo
+    const projects = [
+      {
+        name: "Heinä Heikki",
+        repo: "site-heina-heikki",
+        live: "", // esim. https://YOUR_GITHUB_USERNAME.github.io/site-heina-heikki/
+        desc: "Kevyt ja selkeä landing page -demo. Fokus typografiassa, layoutissa ja responsiivisuudessa.",
+        tags: ["Landing", "HTML", "CSS", "Responsive"]
+      },
+      {
+        name: "Kivi Kalle",
+        repo: "site-kivi-kalle",
+        live: "",
+        desc: "Visuaalisempi yrityssivun malli. Värit, osiot ja CTA-rakenne korostuvat.",
+        tags: ["UI", "Layout", "Branding", "CSS"]
+      },
+      {
+        name: "Konemiehen paja",
+        repo: "site-konemiehen-paja",
+        live: "",
+        desc: "Teollisuushenkinen yrityssivusto. Rakenteinen sisältö ja informatiivinen layout.",
+        tags: ["Business", "HTML", "CSS", "Structure"]
+      },
+      {
+        name: "Kukallinen Leena",
+        repo: "site-kukallinen-leena",
+        live: "",
+        desc: "Pehmeä ja visuaalinen pienyrittäjäsivusto. Väripaletti ja typografia keskiössä.",
+        tags: ["Small business", "Design", "UI", "CSS"]
+      },
+      {
+        name: "Lauran Pomppulinna",
+        repo: "site-lauran-pomppulinna",
+        live: "",
+        desc: "Leikkisä tapahtuma-/palvelusivu. Asiakaslähtöinen rakenne ja selkeät osiot.",
+        tags: ["Marketing", "Landing", "Fun UI", "CSS"]
+      },
+      {
+        name: "Liisan verkkokauppa",
+        repo: "site-liisan-verkkokauppa-demo",
+        live: "",
+        desc: "Verkkokaupan etusivumalli: tuotekortit, rakenne ja ostopolun elementit.",
+        tags: ["E-commerce", "UI", "Layout", "HTML"]
+      },
+      {
+        name: "Metalli Mikko",
+        repo: "site-metalli-mikko",
+        live: "",
+        desc: "Raskaan alan yrityssivun demo. Selkeä informaatio ja ammattimainen ulkoasu.",
+        tags: ["Industrial", "Corporate", "HTML", "CSS"]
+      },
+      {
+        name: "Unelman kirppislöytö",
+        repo: "site-unelman-kirppislöyto",
+        live: "",
+        desc: "Harraste- ja yhteisöpohjainen sivu. Korttipohjainen sisältörakenne.",
+        tags: ["Community", "Cards", "UI", "CSS"]
+      },
+      {
+        name: "Veikon polttopuut",
+        repo: "site-veikon-polttopuut",
+        live: "",
+        desc: "Paikallisen palvelun myyntisivu. Nopea, selkeä ja responsiivinen rakenne.",
+        tags: ["Local business", "Landing", "HTML", "Responsive"]
+      },
+      {
+        name: "Vesan venekeskus",
+        repo: "site-vesan-venekeskus",
+        live: "",
+        desc: "Harraste- ja palvelusivun yhdistelmä. Kategoriat ja navigaatiorakenne.",
+        tags: ["Hobby", "Business", "UI", "HTML"]
+      }
+    ];
+
+    // Kerää tagit filttereihin
+    const allTags = Array.from(new Set(projects.flatMap(p => p.tags))).sort((a,b)=>a.localeCompare(b));
+    const filtersEl = document.getElementById("filters");
+    const gridEl = document.getElementById("grid");
+    const emptyEl = document.getElementById("empty");
+    const searchEl = document.getElementById("search");
+    const resetBtn = document.getElementById("resetBtn");
+    const visibleCountEl = document.getElementById("visibleCount");
+    const totalCountEl = document.getElementById("totalCount");
+
+    totalCountEl.textContent = projects.length;
+
+    let activeTag = "All";
+
+    function chip(label){
+      const el = document.createElement("div");
+      el.className = "chip" + (label === "All" ? " active" : "");
+      el.textContent = label;
+      el.addEventListener("click", () => {
+        activeTag = label;
+        [...filtersEl.children].forEach(c => c.classList.remove("active"));
+        el.classList.add("active");
+        render();
+      });
+      return el;
+    }
+
+    // Render filter chips
+    filtersEl.appendChild(chip("All"));
+    allTags.forEach(t => filtersEl.appendChild(chip(t)));
+
+    function repoUrl(repo){
+      return `https://github.com/${GITHUB_USER}/${repo}`;
+    }
+    function liveUrl(p){
+      // Jos p.live on tyhjä, ehdotetaan oletus-URL:ia
+      return p.live && p.live.trim() ? p.live.trim() : `https://${GITHUB_USER}.github.io/${p.repo}/`;
+    }
+
+    function matches(p, q){
+      if(!q) return true;
+      const hay = (p.name + " " + p.desc + " " + p.tags.join(" ")).toLowerCase();
+      return hay.includes(q.toLowerCase());
+    }
+
+    function passesTag(p){
+      if(activeTag === "All") return true;
+      return p.tags.includes(activeTag);
+    }
+
+    function makeCard(p){
+      const card = document.createElement("div");
+      card.className = "card";
+
+      const top = document.createElement("div");
+      top.className = "card-top";
+
+      const badge = document.createElement("div");
+      badge.className = "badge";
+      badge.innerHTML = `<span class="dot"></span> Demo`;
+      top.appendChild(badge);
+
+      const hint = document.createElement("div");
+      hint.className = "badge";
+      hint.textContent = p.tags[0] || "Project";
+      top.appendChild(hint);
+
+      const h = document.createElement("h3");
+      h.className = "title";
+      h.textContent = p.name;
+
+      const d = document.createElement("p");
+      d.className = "desc";
+      d.textContent = p.desc;
+
+      const tags = document.createElement("div");
+      tags.className = "tags";
+      p.tags.forEach(t=>{
+        const tEl = document.createElement("span");
+        tEl.className = "tag";
+        tEl.textContent = t;
+        tags.appendChild(tEl);
+      });
+
+      const links = document.createElement("div");
+      links.className = "links";
+
+      const liveA = document.createElement("a");
+      liveA.className = "linkbtn";
+      liveA.href = liveUrl(p);
+      liveA.target = "_blank";
+      liveA.rel = "noreferrer";
+      liveA.textContent = "Live demo";
+
+      const ghA = document.createElement("a");
+      ghA.className = "linkbtn ghost";
+      ghA.href = repoUrl(p.repo);
+      ghA.target = "_blank";
+      ghA.rel = "noreferrer";
+      ghA.textContent = "GitHub";
+
+      links.appendChild(liveA);
+      links.appendChild(ghA);
+
+      card.appendChild(top);
+      card.appendChild(h);
+      card.appendChild(d);
+      card.appendChild(tags);
+      card.appendChild(links);
+
+      return card;
+    }
+
+    function render(){
+      const q = searchEl.value.trim();
+      gridEl.innerHTML = "";
+      const visible = projects.filter(p => matches(p, q) && passesTag(p));
+      visible.forEach(p => gridEl.appendChild(makeCard(p)));
+
+      visibleCountEl.textContent = visible.length;
+      emptyEl.style.display = visible.length ? "none" : "block";
+    }
+
+    searchEl.addEventListener("input", render);
+
+    resetBtn.addEventListener("click", ()=>{
+      searchEl.value = "";
+      activeTag = "All";
+      [...filtersEl.children].forEach((c,i)=>c.classList.toggle("active", i===0));
+      render();
+    });
+
+    document.getElementById("y").textContent = new Date().getFullYear();
+    render();
+  </script>
+</body>
+</html>

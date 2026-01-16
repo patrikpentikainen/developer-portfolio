@@ -1,0 +1,91 @@
+#################################
+# OS-generated files
+#################################
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+#################################
+# Editor / IDE settings
+#################################
+.vscode/
+.idea/
+*.code-workspace
+
+#################################
+# Logs & temp files
+#################################
+*.log
+*.tmp
+*.bak
+*.swp
+
+#################################
+# Node / Frontend
+#################################
+**/node_modules/
+**/dist/
+**/build/
+**/.parcel-cache/
+**/.vite/
+
+#################################
+# Python / Backend
+#################################
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/.venv/
+**/venv/
+
+#################################
+# .NET / Desktop
+#################################
+**/bin/
+**/obj/
+
+#################################
+# Mobile (Android / iOS)
+#################################
+**/.gradle/
+**/local.properties
+**/*.keystore
+**/Pods/
+
+#################################
+# Game engines
+#################################
+# Unity
+**/Library/
+**/Temp/
+**/Obj/
+**/Build/
+**/Builds/
+**/*.csproj.user
+
+# Unreal
+**/Binaries/
+**/DerivedDataCache/
+**/Intermediate/
+**/.vs/
+
+#################################
+# Environment & secrets
+#################################
+.env
+.env.*
+*.secret
+*.key
+
+#################################
+# Archives & exports
+#################################
+*.zip
+*.rar
+*.7z
+
+#################################
+# Optional: ignore local notes
+#################################
+NOTES.md
+TODO_LOCAL.md
