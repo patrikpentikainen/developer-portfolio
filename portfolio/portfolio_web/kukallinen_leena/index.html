@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kukallinen Leena | Kausikimput & kukkakauppa</title>
+  <meta name="description" content="Portfolio-demo: boutique-kukkakaupan sivu. Suodatin, galleria lightboxilla ja kevyt UX." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Siirry sisältöön</a>
+
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="logo" href="#" aria-label="Kukallinen Leena etusivu">
+        <span class="logo__mark" aria-hidden="true">✿</span>
+        <span class="logo__text">
+          <strong>Kukallinen Leena</strong>
+          <small>Kausikimput • Häät • Suru • Yritykset</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Päävalikko">
+        <a href="#kimput">Kimput</a>
+        <a href="#galleria">Galleria</a>
+        <a href="#arvostelut">Arvostelut</a>
+        <a href="#yhteys" class="nav__cta">Tilaa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="chip">Portfolio-demo • Light pastel • Vanilla JS</p>
+          <h1>Herkät kimput, <span class="accent">selkeä tilaus</span> – ja kausi edellä.</h1>
+          <p class="lead">
+            Tämä on esimerkkisivu “Kukallinen Leena” -kukkakaupalle. Mukana kausikimppujen suodatin,
+            galleria lightboxilla ja viimeistelty boutique-ilme.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn" href="#kimput">Katso kausikimput</a>
+            <a class="btn btn--ghost" href="#yhteys">Tilaa & kysy</a>
+          </div>
+
+          <div class="hero__highlights">
+            <div class="hl">
+              <strong>24–48h</strong><span>nouto / toimitus</span>
+            </div>
+            <div class="hl">
+              <strong>Sesonki</strong><span>aina edellä</span>
+            </div>
+            <div class="hl">
+              <strong>4.9/5</strong><span>asiakaspalaute</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero__card" aria-label="Sesonkikortti">
+          <div class="stamp">Kausi nyt</div>
+          <h2>Talvikimppu “Pehmeä”</h2>
+          <p class="muted">
+            Vaalea pastelli + vihreä. Sopii arkeen ja lahjaksi. (Demo-teksti)
+          </p>
+
+          <div class="mini">
+            <div class="mini__row"><span>Koko</span><strong>M</strong></div>
+            <div class="mini__row"><span>Hinta</span><strong>39€</strong></div>
+            <div class="mini__row"><span>Sisältö</span><strong>sekoitus</strong></div>
+          </div>
+
+          <a class="btn btn--wide" href="#yhteys">Tilaa tämä</a>
+          <p class="tiny">Huom: tämä on portfolio-demo, ei oikea verkkokauppa.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="kimput">
+      <div class="wrap">
+        <div class="head">
+          <h2>Kausikimput</h2>
+          <p class="muted">Suodata kimppuja tarpeen mukaan. (JS-demo)</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Suodattimet">
+          <button class="filter active" data-filter="all">Kaikki</button>
+          <button class="filter" data-filter="arki">Arki</button>
+          <button class="filter" data-filter="haat">Häät</button>
+          <button class="filter" data-filter="suru">Suru</button>
+          <button class="filter" data-filter="yritys">Yritys</button>
+        </div>
+
+        <div class="bouquets" id="bouquets">
+          <article class="bouquet" data-tags="arki">
+            <div class="bouquet__img" aria-hidden="true"></div>
+            <div class="bouquet__body">
+              <div class="bouquet__top">
+                <h3>“Pehmeä”</h3>
+                <span class="price">29€</span>
+              </div>
+              <p class="muted">Vaalea kimppu arkeen tai pieneksi lahjaksi.</p>
+              <div class="meta">
+                <span class="pill">S</span><span class="pill pill--soft">arki</span>
+              </div>
+              <button class="btn btn--small" data-order='Pehmeä (29€)'>Tilaa</button>
+            </div>
+          </article>
+
+          <article class="bouquet" data-tags="arki,yritys">
+            <div class="bouquet__img bouquet__img--2" aria-hidden="true"></div>
+            <div class="bouquet__body">
+              <div class="bouquet__top">
+                <h3>“Raikas”</h3>
+                <span class="price">39€</span>
+              </div>
+              <p class="muted">Vihreä + pastelli. Toimii myös toimistolle.</p>
+              <div class="meta">
+                <span class="pill">M</span><span class="pill pill--soft">arki</span><span class="pill pill--soft">yritys</span>
+              </div>
+              <button class="btn btn--small" data-order='Raikas (39€)'>Tilaa</button>
+            </div>
+          </article>
+
+          <article class="bouquet" data-tags="haat">
+            <div class="bouquet__img bouquet__img--3" aria-hidden="true"></div>
+            <div class="bouquet__body">
+              <div class="bouquet__top">
+                <h3>“Huntu”</h3>
+                <span class="price">79€</span>
+              </div>
+              <p class="muted">Hääkimpun esimerkkityyli – hillitty ja elegantti.</p>
+              <div class="meta">
+                <span class="pill">L</span><span class="pill pill--soft">häät</span>
+              </div>
+              <button class="btn btn--small" data-order='Huntu (79€)'>Tilaa</button>
+            </div>
+          </article>
+
+          <article class="bouquet" data-tags="suru">
+            <div class="bouquet__img bouquet__img--4" aria-hidden="true"></div>
+            <div class="bouquet__body">
+              <div class="bouquet__top">
+                <h3>“Hiljainen”</h3>
+                <span class="price">69€</span>
+              </div>
+              <p class="muted">Suruun sopiva, rauhallinen sävymaailma.</p>
+              <div class="meta">
+                <span class="pill">L</span><span class="pill pill--soft">suru</span>
+              </div>
+              <button class="btn btn--small" data-order='Hiljainen (69€)'>Tilaa</button>
+            </div>
+          </article>
+
+          <article class="bouquet" data-tags="yritys">
+            <div class="bouquet__img bouquet__img--5" aria-hidden="true"></div>
+            <div class="bouquet__body">
+              <div class="bouquet__top">
+                <h3>“Aula”</h3>
+                <span class="price">99€</span>
+              </div>
+              <p class="muted">Yrityksen aulaan – näyttävä, mutta tyylikäs.</p>
+              <div class="meta">
+                <span class="pill">XL</span><span class="pill pill--soft">yritys</span>
+              </div>
+              <button class="btn btn--small" data-order='Aula (99€)'>Tilaa</button>
+            </div>
+          </article>
+
+          <article class="bouquet" data-tags="haat,yritys">
+            <div class="bouquet__img bouquet__img--6" aria-hidden="true"></div>
+            <div class="bouquet__body">
+              <div class="bouquet__top">
+                <h3>“Kruunu”</h3>
+                <span class="price">149€</span>
+              </div>
+              <p class="muted">Kukkakokonaisuus juhliin tai yritystilaan. (Demo)</p>
+              <div class="meta">
+                <span class="pill">XL</span><span class="pill pill--soft">häät</span><span class="pill pill--soft">yritys</span>
+              </div>
+              <button class="btn btn--small" data-order='Kruunu (149€)'>Tilaa</button>
+            </div>
+          </article>
+        </div>
+
+        <p class="tiny muted" id="resultNote" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="galleria">
+      <div class="wrap">
+        <div class="head">
+          <h2>Galleria</h2>
+          <p class="muted">Klikkaa kuvaa – aukeaa lightboxiin. (JS-demo)</p>
+        </div>
+
+        <div class="gallery" id="gallery">
+          <button class="shot" data-shot="1" aria-label="Avaa kuva 1"></button>
+          <button class="shot shot--2" data-shot="2" aria-label="Avaa kuva 2"></button>
+          <button class="shot shot--3" data-shot="3" aria-label="Avaa kuva 3"></button>
+          <button class="shot shot--4" data-shot="4" aria-label="Avaa kuva 4"></button>
+          <button class="shot shot--5" data-shot="5" aria-label="Avaa kuva 5"></button>
+          <button class="shot shot--6" data-shot="6" aria-label="Avaa kuva 6"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="arvostelut">
+      <div class="wrap">
+        <div class="head">
+          <h2>Asiakaspalaute (demo)</h2>
+          <p class="muted">Pieni “boutique”-fiilis: lyhyet arviot ja tähdet.</p>
+        </div>
+
+        <div class="reviews">
+          <article class="review">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>“Kimppu oli juuri sellainen kuin toivoin. Selkeä viestintä ja nopea nouto.”</p>
+            <p class="who">— Anni, Tampere</p>
+          </article>
+          <article class="review">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>“Hääkimpun sävyt osuivat täydellisesti. Kiitos rauhallisesta prosessista.”</p>
+            <p class="who">— Laura, Ylöjärvi</p>
+          </article>
+          <article class="review">
+            <div class="stars" aria-hidden="true">★★★★☆</div>
+            <p>“Yrityksen aulakukat näyttivät upeilta. Sopimus oli helppo ja selkeä.”</p>
+            <p class="who">— Mikko, yritysasiakas</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="yhteys">
+      <div class="wrap">
+        <div class="head">
+          <h2>Tilaa tai kysy</h2>
+          <p class="muted">Ei oikea tilausjärjestelmä – lomake validoidaan ja näyttää viestin (demo).</p>
+        </div>
+
+        <div class="contact">
+          <form class="form" id="orderForm" novalidate>
+            <label>
+              <span>Nimi</span>
+              <input name="name" type="text" required minlength="2" placeholder="Etunimi Sukunimi" />
+              <small class="err" data-err="name"></small>
+            </label>
+
+            <label>
+              <span>Sähköposti</span>
+              <input name="email" type="email" required placeholder="nimi@esimerkki.fi" />
+              <small class="err" data-err="email"></small>
+            </label>
+
+            <label>
+              <span>Valittu kimppu</span>
+              <input name="bouquet" id="bouquetInput" type="text" readonly value="—" />
+              <small class="hint">Valitse “Tilaa”-napilla kimppu yllä, tai kirjoita viestiin toive.</small>
+            </label>
+
+            <label>
+              <span>Viesti</span>
+              <textarea name="message" rows="4" required minlength="10" placeholder="Toiveet, värit, toimitus/nouto..."></textarea>
+              <small class="err" data-err="message"></small>
+            </label>
+
+            <button class="btn" type="submit">Lähetä pyyntö (demo)</button>
+            <p class="tiny muted" id="formNote" aria-live="polite"></p>
+          </form>
+
+          <aside class="info">
+            <div class="info__box">
+              <h3>Myymälä</h3>
+              <p class="muted">
+                Esimerkkikatu 12<br />
+                00000 Demo
+              </p>
+            </div>
+
+            <div class="info__box">
+              <h3>Aukiolo</h3>
+              <p class="muted">
+                Ma–Pe 10–18<br />
+                La 10–15<br />
+                Su suljettu
+              </p>
+            </div>
+
+            <div class="info__box">
+              <h3>Toimitus</h3>
+              <p class="muted">
+                Nouto myymälästä tai toimitus 24–48h (demo).<br />
+                Yrityksille myös sopimuskimput.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__backdrop" data-close="true"></div>
+    <div class="lightbox__card" role="dialog" aria-modal="true" aria-label="Kuva">
+      <button class="lightbox__close" data-close="true" aria-label="Sulje">✕</button>
+      <div class="lightbox__img" id="lightboxImg" aria-hidden="true"></div>
+      <p class="tiny muted" id="lightboxCaption">—</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year"></span> Kukallinen Leena • Portfolio-demo</p>
+      <a href="#main">Takaisin ylös ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
